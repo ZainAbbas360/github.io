@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Antibiotic Reference — Dr. Zain Abbas</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#f5f4f0;--white:#ffffff;
+  --gp:#1e3a5f;--gp-light:#eaf1f9;--gp-mid:#9dc0e0;
+  --gn:#6b1a0e;--gn-light:#fdf0ee;--gn-mid:#e8a89e;
+  --broad:#1a4d2e;--broad-light:#edfdf5;--broad-mid:#6fcf97;
+  --oral:#3b1f6b;--oral-light:#f3effe;--oral-mid:#c4b0e8;
+  --first:#14532d;--first-bg:#f0fdf4;
+  --second:#7c2d12;--second-bg:#fff7ed;
+  --last:#991b1b;--last-bg:#fff1f2;
+  --warn:#dc2626;--warn-bg:#fef2f2;
+  --border:#e0dbd3;--text:#1c1917;--muted:#78716c;
+  --gold:#b45309;--gold-light:#fffbeb;
+}
+body{background:var(--bg);color:var(--text);font-family:'Source Serif 4',Georgia,serif;font-size:14px;line-height:1.6;}
+
+/* ── PRINT ── */
+@media print{.tabs-bar,.toc-section{display:none!important;}.panel{display:block!important;}body{background:white;}}
+
+/* ── HEADER ── */
+.page-header{background:var(--text);color:white;padding:24px 28px 20px;border-bottom:4px solid var(--gold);}
+.header-row1{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:12px;}
+.header-title{font-size:24px;font-weight:700;line-height:1.2;}
+.header-sub{font-family:'JetBrains Mono',monospace;font-size:10px;color:#9ca3af;letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;}
+.ref-badge{background:var(--gold);color:white;border-radius:6px;padding:8px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;text-align:center;white-space:nowrap;}
+.ref-badge strong{font-size:18px;display:block;}
+.author-bar{background:rgba(255,255,255,0.07);border-radius:6px;padding:9px 14px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.a-name{font-weight:700;font-size:13px;}
+.a-meta{font-family:'JetBrains Mono',monospace;font-size:10px;color:#d1d5db;letter-spacing:0.3px;line-height:1.8;}
+.a-meta span{color:#fbbf24;}
+.award-pill{background:rgba(180,83,9,0.5);border:1px solid rgba(180,83,9,0.7);border-radius:3px;padding:3px 9px;font-size:10px;font-family:'JetBrains Mono',monospace;color:#fef3c7;white-space:nowrap;}
+
+/* ── TABS ── */
+.tabs-bar{background:var(--white);border-bottom:2px solid var(--border);display:flex;overflow-x:auto;position:sticky;top:0;z-index:200;box-shadow:0 2px 6px rgba(0,0,0,0.07);}
+.tb{padding:12px 16px;border:none;background:none;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.3px;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .15s;}
+.tb:hover{color:var(--text);}
+.tb.a-gp{color:var(--gp);border-bottom-color:var(--gp);font-weight:600;}
+.tb.a-gn{color:var(--gn);border-bottom-color:var(--gn);font-weight:600;}
+.tb.a-broad{color:var(--broad);border-bottom-color:var(--broad);font-weight:600;}
+.tb.a-oral{color:var(--oral);border-bottom-color:var(--oral);font-weight:600;}
+.tb.a-other{color:var(--gold);border-bottom-color:var(--gold);font-weight:600;}
+
+/* ── LAYOUT ── */
+.body-wrap{max-width:1280px;margin:0 auto;padding:24px 20px 60px;}
+.panel{display:none;}
+.panel.active{display:block;animation:fadeIn .2s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── TABLE OF CONTENTS ── */
+.toc-section{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin-bottom:26px;}
+.toc-title{font-size:16px;font-weight:700;margin-bottom:16px;color:var(--text);display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;}
+.toc-item{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:6px;cursor:pointer;transition:background .15s;text-decoration:none;color:var(--text);}
+.toc-item:hover{background:var(--bg);}
+.toc-num{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:white;}
+.toc-num.gp{background:var(--gp);}
+.toc-num.gn{background:var(--gn);}
+.toc-num.broad{background:var(--broad);}
+.toc-num.oral{background:var(--oral);}
+.toc-num.other{background:var(--gold);}
+.toc-text{font-size:13px;line-height:1.3;}
+.toc-text small{display:block;font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+
+/* ── SECTION HEADING ── */
+.sec-head{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--border);flex-wrap:wrap;}
+.sec-head h2{font-size:19px;font-weight:700;}
+.sec-head.gp h2{color:var(--gp);}
+.sec-head.gn h2{color:var(--gn);}
+.sec-head.broad h2{color:var(--broad);}
+.sec-head.oral h2{color:var(--oral);}
+.gbadge{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 9px;border-radius:3px;letter-spacing:1px;text-transform:uppercase;font-weight:600;border:1px solid;}
+.gbadge.gp{background:var(--gp-light);color:var(--gp);border-color:var(--gp-mid);}
+.gbadge.gn{background:var(--gn-light);color:var(--gn);border-color:var(--gn-mid);}
+.gbadge.broad{background:var(--broad-light);color:var(--broad);border-color:var(--broad-mid);}
+.gbadge.oral{background:var(--oral-light);color:var(--oral);border-color:var(--oral-mid);}
+.sec-desc{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);}
+
+/* ── LADDER INDICATOR ── */
+.ladder{display:flex;align-items:center;gap:6px;background:var(--gold-light);border:1px solid #fde68a;border-radius:8px;padding:10px 14px;margin-bottom:18px;font-size:12px;flex-wrap:wrap;}
+.ladder-title{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-right:4px;flex-shrink:0;}
+.ladder-step{display:flex;align-items:center;gap:4px;}
+.lstep{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;padding:3px 9px;border-radius:4px;}
+.lstep.s1{background:#dcfce7;color:var(--first);}
+.lstep.s2{background:#fff7ed;color:var(--second);}
+.lstep.s3{background:#fef2f2;color:var(--last);}
+.l-arr{color:var(--muted);font-size:12px;}
+
+/* ── DRUG TABLE ── */
+.dtable-wrap{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.05);}
+.dtable-hdr{padding:10px 18px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);}
+.dtable-hdr.l1{background:#f0fdf4;color:var(--first);}
+.dtable-hdr.l2{background:#fff7ed;color:var(--second);}
+.dtable-hdr.l3{background:#fef2f2;color:var(--last);}
+.dtable-hdr.lbroad{background:#edfdf5;color:var(--broad);}
+table.dt{width:100%;border-collapse:collapse;}
+table.dt thead th{background:#faf9f7;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);padding:9px 14px;text-align:left;border-bottom:1px solid var(--border);font-weight:500;}
+table.dt tbody td{padding:12px 14px;border-bottom:1px solid #f3f0ea;vertical-align:top;font-size:13px;line-height:1.5;}
+table.dt tbody tr:last-child td{border-bottom:none;}
+table.dt tbody tr:hover td{background:#fafaf9;}
+.dn{font-weight:700;font-size:14px;color:var(--text);}
+.dc{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);display:block;margin-top:2px;}
+.dm{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--text);}
+.dd{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-top:2px;}
+.d70{font-family:'JetBrains Mono',monospace;font-size:12px;background:var(--gold-light);border:1px solid #fde68a;border-radius:4px;padding:3px 8px;color:var(--gold);font-weight:600;display:inline-block;margin:2px 0;}
+.covs{display:flex;flex-wrap:wrap;gap:4px;}
+.cv{font-size:10px;padding:2px 7px;border-radius:3px;font-family:'JetBrains Mono',monospace;border:1px solid;white-space:nowrap;}
+.cv.gp{background:var(--gp-light);color:var(--gp);border-color:var(--gp-mid);}
+.cv.gn{background:var(--gn-light);color:var(--gn);border-color:var(--gn-mid);}
+.cv.an{background:#f5f3ff;color:#5b21b6;border-color:#c4b5fd;}
+.cv.no{background:var(--warn-bg);color:var(--warn);border-color:#fecaca;}
+.cv.br{background:var(--broad-light);color:var(--broad);border-color:var(--broad-mid);}
+.fl{display:inline-block;border-radius:3px;font-size:10px;padding:1px 6px;font-family:'JetBrains Mono',monospace;margin:1px;white-space:nowrap;border:1px solid;}
+.fl.r{background:var(--warn-bg);color:var(--warn);border-color:#fecaca;}
+.fl.g{background:var(--first-bg);color:var(--first);border-color:#bbf7d0;}
+.fl.a{background:var(--second-bg);color:var(--second);border-color:#fde68a;}
+.notes-td{font-size:12px;color:#44403c;}
+
+/* ── STEP LABEL ── */
+.step-label{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:2px 7px;border-radius:3px;margin-bottom:4px;}
+.step-label.s1{background:#dcfce7;color:var(--first);}
+.step-label.s2{background:#fff7ed;color:var(--second);}
+.step-label.s3{background:#fef2f2;color:var(--last);}
+.step-label.sc{background:#ede9fe;color:#5b21b6;}
+
+/* ── CALLOUT ── */
+.callout{border-radius:7px;padding:10px 14px;margin-bottom:16px;font-size:12px;display:flex;gap:9px;border:1px solid;}
+.callout.blue{background:var(--gp-light);border-color:var(--gp-mid);color:var(--gp);}
+.callout.red{background:var(--gn-light);border-color:var(--gn-mid);color:var(--gn);}
+.callout.green{background:var(--broad-light);border-color:var(--broad-mid);color:var(--broad);}
+.callout.amber{background:var(--second-bg);border-color:#fde68a;color:var(--second);}
+.callout.purple{background:var(--oral-light);border-color:var(--oral-mid);color:var(--oral);}
+
+/* ── QUICK RULE CARDS ── */
+.qr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:4px;}
+.qrc{border-radius:8px;padding:13px 15px;border:1px solid;}
+.qrc.gp{background:var(--gp-light);border-color:var(--gp-mid);}
+.qrc.gn{background:var(--gn-light);border-color:var(--gn-mid);}
+.qrc.br{background:var(--broad-light);border-color:var(--broad-mid);}
+.qrc.or{background:var(--oral-light);border-color:var(--oral-mid);}
+.qrc.warn{background:var(--warn-bg);border-color:#fecaca;}
+.qrc.amber{background:var(--second-bg);border-color:#fde68a;}
+.qrc.green{background:var(--first-bg);border-color:#bbf7d0;}
+.qrc h4{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:7px;}
+.qrc.gp h4{color:var(--gp);}.qrc.gn h4{color:var(--gn);}.qrc.br h4{color:var(--broad);}.qrc.or h4{color:var(--oral);}
+.qrc.warn h4{color:var(--warn);}.qrc.amber h4{color:var(--second);}.qrc.green h4{color:var(--first);}
+.qrc ul{list-style:none;}
+.qrc ul li{font-size:12px;padding:3px 0;line-height:1.5;}
+.qrc ul li::before{content:'→ ';font-weight:700;}
+.qrc.gp ul li::before{color:var(--gp);}.qrc.gn ul li::before{color:var(--gn);}
+.qrc.br ul li::before{color:var(--broad);}.qrc.or ul li::before{color:var(--oral);}
+.qrc.warn ul li::before{color:var(--warn);}.qrc.amber ul li::before{color:var(--second);}.qrc.green ul li::before{color:var(--first);}
+
+.quick-box{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:20px;}
+.quick-box h3{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+
+/* ── ORAL TABLE ── */
+.oral-section-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:10px 18px;border-bottom:1px solid var(--border);background:var(--oral-light);color:var(--oral);}
+.brand{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--oral);}
+.brand-list{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);display:block;margin-top:2px;}
+.duration-pill{display:inline-block;background:#ede9fe;border:1px solid var(--oral-mid);border-radius:3px;padding:1px 7px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--oral);white-space:nowrap;}
+.indication-cell{font-size:12px;}
+.ind-tag{display:inline-block;background:var(--oral-light);border:1px solid var(--oral-mid);border-radius:3px;padding:1px 7px;font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--oral);margin:2px 2px 2px 0;}
+.se-cell{font-size:12px;color:var(--muted);}
+.se{display:inline-block;background:var(--warn-bg);border:1px solid #fecaca;border-radius:3px;padding:1px 6px;font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--warn);margin:2px 2px 2px 0;}
+
+/* ── MONITORING TABLE ── */
+.mon-table-wrap{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:20px;}
+
+/* ── ABBR ── */
+.abbr-wrap{columns:2;column-gap:20px;}
+@media(max-width:680px){.abbr-wrap{columns:1;}}
+.abbr-block{break-inside:avoid;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:14px;}
+.abbr-block h4{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.abbr-row{display:flex;gap:8px;padding:4px 0;border-bottom:1px solid #f3f0ea;font-size:12px;}
+.abbr-row:last-child{border-bottom:none;}
+.ak{font-family:'JetBrains Mono',monospace;font-weight:600;min-width:90px;flex-shrink:0;color:var(--text);}
+.av{color:var(--muted);}
+
+/* ── AUTHOR ── */
+.bio-wrap{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.bio-hdr{background:var(--text);color:white;padding:24px 28px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+.bio-init{width:64px;height:64px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:600;color:white;flex-shrink:0;border:2px solid rgba(255,255,255,0.2);}
+.bio-name{font-size:20px;font-weight:700;margin-bottom:4px;}
+.bio-sub{font-family:'JetBrains Mono',monospace;font-size:10px;color:#9ca3af;letter-spacing:0.5px;line-height:1.8;}
+.bio-sub span{color:#fbbf24;}
+.award-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px;}
+.ac{background:rgba(180,83,9,0.3);border:1px solid rgba(180,83,9,0.5);border-radius:3px;padding:4px 10px;font-size:11px;font-family:'JetBrains Mono',monospace;color:#fef3c7;}
+.bio-body{padding:24px 28px;}
+.bio-sec{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+.bio-sec:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.bio-sec h3{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:8px;}
+.bio-sec p{font-size:13px;color:#44403c;line-height:1.75;}
+.bio-g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:580px){.bio-g2{grid-template-columns:1fr;}}
+.bi{background:var(--bg);border-radius:7px;padding:13px 15px;border:1px solid var(--border);}
+.bi h4{font-size:12px;font-weight:700;margin-bottom:5px;}
+.bi p{font-size:12px;color:var(--muted);line-height:1.65;}
+
+/* ── COFFEE ── */
+.coffee-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;max-width:520px;margin:0 auto;}
+.ct{background:#1c0a00;padding:28px;text-align:center;}
+.ct .em{font-size:44px;display:block;margin-bottom:10px;}
+.ct h2{font-size:20px;font-weight:700;color:#fb923c;margin-bottom:7px;}
+.ct p{font-size:13px;color:#9ca3af;line-height:1.6;}
+.cprice{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:600;color:#fbbf24;margin:12px 0 3px;}
+.cb{padding:22px 26px;}
+.pr{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.pr:last-child{border-bottom:none;}
+.pl{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
+.pv{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:var(--text);}
+.pv.grn{color:var(--first);}.pv.org{color:var(--gold);font-size:18px;}
+.copy-btn{background:var(--first-bg);border:1px solid #bbf7d0;color:var(--first);padding:3px 10px;border-radius:3px;font-size:10px;font-family:'JetBrains Mono',monospace;cursor:pointer;}
+.how{background:var(--bg);border-radius:7px;padding:14px 16px;margin-top:14px;}
+.how h4{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.step{display:flex;gap:10px;margin-bottom:8px;font-size:12px;color:var(--muted);align-items:flex-start;}
+.sn{width:20px;height:20px;border-radius:50%;background:var(--gold);color:white;display:flex;align-items:center;justify-content:center;font-size:10px;font-family:'JetBrains Mono',monospace;flex-shrink:0;margin-top:1px;}
+
+@media(max-width:768px){
+  table.dt{display:block;overflow-x:auto;}
+  .page-header{padding:16px;}
+  .body-wrap{padding:14px;}
+  .toc-grid{grid-template-columns:1fr;}
+}
+footer{background:var(--text);color:#6b7280;text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.5px;}
+footer span{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="page-header">
+  <div class="header-row1">
+    <div>
+      <div class="header-title">Complete Antibiotic Reference Guide</div>
+      <div class="header-sub">IV · Oral · GP · GN · Broad Spectrum · Stepwise Coverage · Pakistan Edition</div>
+    </div>
+    <div class="ref-badge"><strong>70 kg</strong>Reference Adult<br>Male / Female</div>
+  </div>
+  <div class="author-bar">
+    <div>
+      <div class="a-name">Dr. Muhammad Zain Abbas</div>
+      <div class="a-meta"><span>Author</span> — Paragon Series · <span>Founder</span> — 360 Muslim Experts &amp; Medico 360 · MBBS · Medical Educator · Public Speaker</div>
+    </div>
+    <div style="margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;">
+      <span class="award-pill">🏆 Best Orator — UHS Vice Chancellor</span>
+      <span class="award-pill">🌟 Best Youth Leader — Health Minister</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ TABS ═══════════ -->
+<div class="tabs-bar">
+  <button class="tb" onclick="gotoTOC()">📋 Contents</button>
+  <button class="tb" id="tab-gp" onclick="switchTab('gp','a-gp')">🔵 Gram Positive IV</button>
+  <button class="tb" id="tab-gn" onclick="switchTab('gn','a-gn')">🟠 Gram Negative IV</button>
+  <button class="tb" id="tab-broad" onclick="switchTab('broad','a-broad')">⚡ Broad Spectrum IV</button>
+  <button class="tb" id="tab-oral" onclick="switchTab('oral','a-oral')">💊 Oral Antibiotics</button>
+  <button class="tb" id="tab-monitor" onclick="switchTab('monitor','a-other')">🔬 Monitoring</button>
+  <button class="tb" id="tab-abbr" onclick="switchTab('abbr','a-other')">🔤 Abbreviations</button>
+  <button class="tb" id="tab-author" onclick="switchTab('author','a-other')">👨‍⚕️ About Author</button>
+  <button class="tb" id="tab-coffee" onclick="switchTab('coffee','a-other')">☕ Support</button>
+</div>
+
+<!-- ═══════════ BODY ═══════════ -->
+<div class="body-wrap">
+
+<!-- ═══════════════════════════════════════════════════════
+     TABLE OF CONTENTS
+═══════════════════════════════════════════════════════ -->
+<div id="toc-section" class="toc-section">
+  <div class="toc-title">📋 Table of Contents — Complete Antibiotic Reference Guide</div>
+  <div class="toc-grid">
+    <a class="toc-item" onclick="switchTab('gp','a-gp')">
+      <div class="toc-num gp">1</div>
+      <div class="toc-text">Gram Positive (GP) — IV Antibiotics<small>Simple → Resistant · 70 kg doses · MRSA ladder</small></div>
+    </a>
+    <a class="toc-item" onclick="switchTab('gn','a-gn')">
+      <div class="toc-num gn">2</div>
+      <div class="toc-text">Gram Negative (GN) — IV Antibiotics<small>Simple → MDR · ESBL · KPC · Pseudomonas ladder</small></div>
+    </a>
+    <a class="toc-item" onclick="switchTab('broad','a-broad')">
+      <div class="toc-num broad">3</div>
+      <div class="toc-text">Broad Spectrum — IV Antibiotics<small>Empiric sepsis · Carbapenems · Combination therapy</small></div>
+    </a>
+    <a class="toc-item" onclick="switchTab('oral','a-oral')">
+      <div class="toc-num oral">4</div>
+      <div class="toc-text">Oral Antibiotics — Pakistan Edition<small>Brand names · Doses · Duration · Side effects · Indications</small></div>
+    </a>
+    <a class="toc-item" onclick="switchTab('monitor','a-other')">
+      <div class="toc-num other">5</div>
+      <div class="toc-text">Monitoring &amp; Renal Dose Adjustment<small>Toxicities · Interactions · Infusion times</small></div>
+    </a>
+    <a class="toc-item" onclick="switchTab('abbr','a-other')">
+      <div class="toc-num other">6</div>
+      <div class="toc-text">Abbreviation Glossary<small>130+ medical &amp; pharmacological abbreviations</small></div>
+    </a>
+    <a class="toc-item" onclick="switchTab('author','a-other')">
+      <div class="toc-num other">7</div>
+      <div class="toc-text">About the Author<small>Dr. Muhammad Zain Abbas — Paragon Series · 360 Muslim Experts</small></div>
+    </a>
+    <a class="toc-item" onclick="switchTab('coffee','a-other')">
+      <div class="toc-num other">8</div>
+      <div class="toc-text">Support the Mission<small>EasyPaisa · Rs. 450 · Medico 360</small></div>
+    </a>
+  </div>
+  <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;">
+    💡 <strong>How to use:</strong> Antibiotics are arranged from <span style="color:var(--first);font-weight:700">simple/narrow</span> → <span style="color:var(--second);font-weight:700">moderate</span> → <span style="color:var(--last);font-weight:700">resistant/last resort</span>. All IV doses calculated for a standard <strong>70 kg adult</strong>. Oral section includes Pakistan brand names.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     GRAM POSITIVE IV
+═══════════════════════════════════════════════════════ -->
+<div id="panel-gp" class="panel">
+  <div class="sec-head gp">
+    <h2>Gram Positive (GP) — IV Antibiotics</h2>
+    <span class="gbadge gp">Thick Peptidoglycan · Purple Stain</span>
+    <span class="sec-desc">Stepwise: Simple → Resistant</span>
+  </div>
+
+  <div class="callout blue"><span>ℹ️</span><span><strong>Key GP Organisms:</strong> S. aureus (MSSA/MRSA) · S. pyogenes (GAS) · S. pneumoniae · Enterococcus (VSE/VRE) · Listeria monocytogenes · Clostridium spp. · S. agalactiae (GBS)</span></div>
+
+  <div class="ladder">
+    <span class="ladder-title">Treatment Ladder:</span>
+    <span class="lstep s1">Step 1 — Simple/Community GP</span><span class="l-arr">→</span>
+    <span class="lstep s1">Step 2 — MSSA / Strep</span><span class="l-arr">→</span>
+    <span class="lstep s2">Step 3 — MRSA Empiric</span><span class="l-arr">→</span>
+    <span class="lstep s2">Step 4 — MRSA Confirmed</span><span class="l-arr">→</span>
+    <span class="lstep s3">Step 5 — VRE / Resistant GP</span>
+  </div>
+
+  <!-- STEP 1–2: SIMPLE GP -->
+  <div class="dtable-wrap">
+    <div class="dtable-hdr l1">✅ Step 1–2 — Simple & Community GP Infections (Penicillins & Basic Cephalosporins)</div>
+    <table class="dt">
+      <thead><tr><th>Drug</th><th>Standard Dose</th><th>Dose — 70 kg</th><th>Coverage</th><th>Best Used For</th><th>Key Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="dn">Penicillin G</span><span class="dc">Natural Penicillin · β-lactam</span><span class="step-label s1">Step 1</span></td>
+          <td><div class="dm">1–4 MU IV q4–6h</div><div class="dd">Meningitis: 4 MU q4h · Endocarditis: 3–4 MU q4h</div></td>
+          <td><span class="d70">2–4 MU IV q4h<br>(not weight-based)</span></td>
+          <td class="covs"><span class="cv gp">GAS (S. pyogenes)</span><span class="cv gp">Strep pneumo (PCN-S)</span><span class="cv gp">N. meningitidis</span><span class="cv gp">Viridans Strep</span></td>
+          <td class="notes-td"><span class="fl g">Strep throat/pharyngitis</span><span class="fl g">Rheumatic fever prevention</span><span class="fl g">NF + Clindamycin (toxin block)</span><span class="fl g">Syphilis (Neurosyphilis)</span></td>
+          <td class="notes-td">Narrowest spectrum — use when organism confirmed<br>PCN allergy: Ceftriaxone (1% cross-react)<br>PCN-resistant Strep pneumo → use Ceftriaxone<br><span class="fl r">NOT MRSA · NOT Enterococcus faecium</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Ampicillin</span><span class="dc">Aminopenicillin · β-lactam</span><span class="step-label s1">Step 1</span></td>
+          <td><div class="dm">1–2 g IV q4–6h</div><div class="dd">Meningitis: 2 g q4h · Endocarditis: 2 g q4h</div></td>
+          <td><span class="d70">2 g IV q6h<br>Meningitis/Endocarditis: 2 g q4h</span></td>
+          <td class="covs"><span class="cv gp">Enterococcus faecalis</span><span class="cv gp">Listeria</span><span class="cv gp">GBS (S. agalactiae)</span><span class="cv gp">Streptococcus</span></td>
+          <td class="notes-td"><span class="fl g">1st line: Listeria meningitis</span><span class="fl g">GBS neonatal sepsis</span><span class="fl g">Enterococcal endocarditis + Gentamicin</span></td>
+          <td class="notes-td">Add Gentamicin for synergy in endocarditis<br><span class="fl r">NOT MRSA · NOT E. faecium (VRE)</span><br>80% E. coli resistant — not for empiric UTI<br>Rash if given in EBV (mononucleosis) — <span class="fl a">Check mono first</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Cefazolin</span><span class="dc">1st Gen Cephalosporin · β-lactam</span><span class="step-label s1">Step 2</span></td>
+          <td><div class="dm">1–2 g IV q8h</div><div class="dd">Surgical prophylaxis: 2 g single dose 30–60 min before</div></td>
+          <td><span class="d70">2 g IV q8h<br>Surgical prophylaxis: 2 g single dose</span></td>
+          <td class="covs"><span class="cv gp">MSSA</span><span class="cv gp">Streptococcus</span></td>
+          <td class="notes-td"><span class="fl g">MSSA bacteremia (preferred over Oxacillin — better tolerated)</span><span class="fl g">Surgical prophylaxis standard</span><span class="fl g">Skin/soft tissue infections</span></td>
+          <td class="notes-td">Safe in PCN allergy (low cross-reactivity ~1–2%)<br><span class="fl r">NOT MRSA · NOT Enterococcus · NOT GN rods</span><br>Renal adjustment: CrCl 11–34 → q12h; &lt;10 → q24h</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Ceftriaxone</span><span class="dc">3rd Gen Cephalosporin · β-lactam</span><span class="step-label s1">Step 2</span></td>
+          <td><div class="dm">1–2 g IV q24h</div><div class="dd">Meningitis: 2 g q12h · Gonorrhea: 500 mg IM single</div></td>
+          <td><span class="d70">2 g IV q24h<br>Meningitis: 2 g q12h</span></td>
+          <td class="covs"><span class="cv gp">Strep pneumo</span><span class="cv gp">Viridans Strep</span><span class="cv gn">E. coli · Klebsiella</span><span class="cv gn">H. influenzae · N. meningitidis</span></td>
+          <td class="notes-td"><span class="fl g">CAP, meningitis, typhoid</span><span class="fl g">Once-daily — OPAT ideal</span><span class="fl g">Endocarditis (Viridans Strep)</span></td>
+          <td class="notes-td">Biliary excretion — NO renal adjustment needed<br>Add Dexamethasone for meningitis (reduce inflammation)<br><span class="fl r">NOT MRSA · NOT Enterococcus · NOT ESBL</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Oxacillin / Nafcillin</span><span class="dc">Anti-staphylococcal Penicillin · β-lactam</span><span class="step-label s1">Step 2</span></td>
+          <td><div class="dm">1–2 g IV q4h</div><div class="dd">Endocarditis/osteomyelitis: 2 g q4h × 4–6 weeks</div></td>
+          <td><span class="d70">2 g IV q4h<br>(12 g/day total)</span></td>
+          <td class="covs"><span class="cv gp">MSSA</span><span class="cv gp">Streptococcus</span><span class="cv no">NOT MRSA</span></td>
+          <td class="notes-td"><span class="fl g">Gold standard: MSSA bacteremia/endocarditis</span><span class="fl g">Osteomyelitis (MSSA)</span><span class="fl g">Superior outcomes vs Vancomycin for MSSA — must use if confirmed MSSA</span></td>
+          <td class="notes-td">Oxacillin: <span class="fl a">Hepatotoxic</span> — LFTs weekly<br>Nafcillin: <span class="fl a">Interstitial Nephritis</span> · CYP3A4 inducer → ↓ Warfarin<br><span class="fl r">NEVER use for MRSA</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- STEP 3–4: MRSA -->
+  <div class="dtable-wrap">
+    <div class="dtable-hdr l2">🔶 Step 3–4 — MRSA & Moderate-Resistant GP (Empiric → Confirmed MRSA)</div>
+    <table class="dt">
+      <thead><tr><th>Drug</th><th>Standard Dose</th><th>Dose — 70 kg</th><th>Coverage</th><th>Best Used For</th><th>Key Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="dn">Vancomycin</span><span class="dc">Glycopeptide · Cell wall inhibitor</span><span class="step-label s2">Step 3</span></td>
+          <td><div class="dm">15–20 mg/kg IV q8–12h</div><div class="dd">Max 3 g/dose · Infuse ≥60 min/g</div></td>
+          <td><span class="d70">1,050–1,400 mg q8–12h<br>→ Practical: 1,000–1,250 mg q12h<br>AUC/MIC target: 400–600</span></td>
+          <td class="covs"><span class="cv gp">MRSA</span><span class="cv gp">MSSA</span><span class="cv gp">Streptococcus</span><span class="cv gp">Enterococcus (VSE)</span><span class="cv no">NOT VRE</span></td>
+          <td class="notes-td"><span class="fl g">Empiric MRSA (all sites)</span><span class="fl g">MRSA bacteremia, endocarditis, osteomyelitis</span><span class="fl g">Hospital-acquired GP infections</span></td>
+          <td class="notes-td"><span class="fl r">Red Man Syndrome</span> — rate-related, NOT allergy; slow infusion (≥60 min/g)<br><span class="fl r">Nephrotoxic</span> — SCr q48h; AUC/MIC monitoring preferred (ASHP 2020)<br>VRE = resistant → escalate<br>If MSSA confirmed → <strong>de-escalate to Oxacillin</strong></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Teicoplanin</span><span class="dc">Glycopeptide · Cell wall inhibitor</span><span class="step-label s2">Step 3</span></td>
+          <td><div class="dm">6 mg/kg IV q12h × 3 loading doses</div><div class="dd">Then 6 mg/kg IV q24h maintenance</div></td>
+          <td><span class="d70">Load: 420 mg q12h × 3 doses<br>Maint: 420 mg IV q24h<br>Target trough: 15–30 mg/L (serious)</span></td>
+          <td class="covs"><span class="cv gp">MRSA</span><span class="cv gp">MSSA</span><span class="cv gp">Streptococcus</span><span class="cv gp">Enterococcus (VSE)</span></td>
+          <td class="notes-td"><span class="fl g">Alternative to Vancomycin</span><span class="fl g">Once-daily maintenance — convenient</span><span class="fl g">When Vancomycin causes Red Man or nephrotoxicity</span></td>
+          <td class="notes-td">Less nephrotoxic than Vancomycin — prefer in borderline renal function<br>Longer half-life → once daily advantage<br>Trough-based monitoring (not AUC)<br>Less studied than Vancomycin in severe MRSA</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Clindamycin</span><span class="dc">Lincosamide · 50S ribosome inhibitor</span><span class="step-label s2">Step 3</span></td>
+          <td><div class="dm">600–900 mg IV q8h</div><div class="dd">Toxin inhibition: always combine with β-lactam</div></td>
+          <td><span class="d70">600–900 mg IV q8h<br>(fixed dose)</span></td>
+          <td class="covs"><span class="cv gp">MSSA</span><span class="cv gp">Streptococcus</span><span class="cv an">Anaerobes</span><span class="cv no">NOT MRSA reliably</span></td>
+          <td class="notes-td"><span class="fl g">NF: Pen G + Clindamycin (toxin block)</span><span class="fl g">TSS: add to β-lactam</span><span class="fl g">Osteomyelitis (MSSA, PO step-down)</span></td>
+          <td class="notes-td">Good bone/tissue penetration — ideal for step-down oral in osteomyelitis<br><span class="fl r">C. diff risk</span> — highest of all antibiotics<br>D-test: check for inducible resistance in Staph<br>No renal adjustment needed</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Ceftaroline</span><span class="dc">5th Gen Cephalosporin · β-lactam</span><span class="step-label s2">Step 4</span></td>
+          <td><div class="dm">600 mg IV q8–12h</div><div class="dd">Infuse over 60 min</div></td>
+          <td><span class="d70">600 mg IV q8h<br>(fixed dose)</span></td>
+          <td class="covs"><span class="cv gp">MRSA</span><span class="cv gp">MSSA</span><span class="cv gp">Strep pneumo</span></td>
+          <td class="notes-td"><span class="fl g">ONLY β-lactam active vs MRSA</span><span class="fl g">MRSA skin/soft tissue</span><span class="fl g">CABP (community-acquired bacterial pneumonia)</span><span class="fl g">Salvage: MRSA endocarditis (+ Daptomycin)</span></td>
+          <td class="notes-td">Binds PBP2a — circumvents MRSA resistance mechanism<br>Positive Coombs test (rarely clinically significant)<br>Reduce dose: CrCl &lt;50 mL/min<br>Not approved for MRSA bacteremia as monotherapy (combo preferred)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- STEP 5: VRE / RESISTANT -->
+  <div class="dtable-wrap">
+    <div class="dtable-hdr l3">🔴 Step 5 — Resistant GP / VRE / Last Resort</div>
+    <table class="dt">
+      <thead><tr><th>Drug</th><th>Standard Dose</th><th>Dose — 70 kg</th><th>Coverage</th><th>Best Used For</th><th>Key Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="dn">Daptomycin</span><span class="dc">Cyclic Lipopeptide · Membrane depolarisation</span><span class="step-label s3">Step 5</span></td>
+          <td><div class="dm">4–10 mg/kg IV q24h</div><div class="dd">SSTI: 4–6 mg/kg · Bacteremia/IE: 6–10 mg/kg · VRE: 10–12 mg/kg</div></td>
+          <td><span class="d70">SSTI: 280–420 mg q24h<br>Bacteremia: 420–700 mg q24h<br>VRE IE: 700–840 mg q24h</span></td>
+          <td class="covs"><span class="cv gp">MRSA</span><span class="cv gp">VRE</span><span class="cv gp">MSSA</span><span class="cv gp">Enterococcus</span><span class="cv no">NOT Pneumonia</span></td>
+          <td class="notes-td"><span class="fl g">MRSA bacteremia/right-sided endocarditis</span><span class="fl g">VRE infections (high dose)</span><span class="fl r">NEVER for pneumonia</span></td>
+          <td class="notes-td"><span class="fl r">NEVER in pneumonia</span> — inactivated by pulmonary surfactant<br><span class="fl a">CPK weekly</span> — myopathy/rhabdomyolysis<br>Avoid concurrent statins (↑ myopathy risk)<br>Dose q48h if CrCl &lt;30 mL/min</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Linezolid</span><span class="dc">Oxazolidinone · 50S + 30S ribosome inhibitor</span><span class="step-label s3">Step 5</span></td>
+          <td><div class="dm">600 mg IV q12h</div><div class="dd">100% oral bioavailability — switch IV→PO early</div></td>
+          <td><span class="d70">600 mg IV q12h<br>(fixed dose — not weight-based)</span></td>
+          <td class="covs"><span class="cv gp">MRSA</span><span class="cv gp">VRE</span><span class="cv gp">MRSA Pneumonia</span><span class="cv gp">MDR GP</span></td>
+          <td class="notes-td"><span class="fl g">1st choice: MRSA pneumonia (best lung penetration)</span><span class="fl g">VRE infections</span><span class="fl g">MRSA when Vancomycin fails or nephrotoxic</span></td>
+          <td class="notes-td"><span class="fl r">Serotonin Syndrome</span> — avoid SSRIs, SNRIs, tramadol, meperidine (weak MAO-I)<br><span class="fl r">Thrombocytopenia</span> — CBC weekly; limit ≤28 days<br><span class="fl r">Optic neuropathy</span> — prolonged use (&gt;28 days)<br><span class="fl g">No renal dose adjustment</span> — safe in AKI</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Quinupristin-Dalfopristin</span><span class="dc">Streptogramin · 50S ribosome (dual action)</span><span class="step-label s3">Step 5</span></td>
+          <td><div class="dm">7.5 mg/kg IV q8h</div><div class="dd">Infuse over 60 min via central line</div></td>
+          <td><span class="d70">525 mg IV q8h<br>Must use central venous catheter</span></td>
+          <td class="covs"><span class="cv gp">VRE (E. faecium)</span><span class="cv gp">MRSA</span><span class="cv no">NOT E. faecalis</span></td>
+          <td class="notes-td"><span class="fl g">Salvage VRE endocarditis</span><span class="fl g">When Linezolid/Daptomycin not available</span></td>
+          <td class="notes-td">Severe myalgia/arthralgia in 50% — major tolerability issue<br>Must use central line — severe phlebitis peripherally<br>CYP3A4 inhibitor — multiple drug interactions<br>NOT effective for E. faecalis (intrinsic resistance)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="quick-box">
+    <h3>🧠 GP Quick Decision Rules — 70 kg Adult</h3>
+    <div class="qr-grid">
+      <div class="qrc gp"><h4>Confirmed MSSA → Best Choice</h4><ul><li>Nafcillin or Oxacillin 2 g IV q4h (proven superior to Vancomycin)</li><li>Alternative: Cefazolin 2 g IV q8h (better tolerated)</li><li>De-escalate from Vancomycin immediately when MSSA confirmed</li></ul></div>
+      <div class="qrc gp"><h4>MRSA — Treatment Ladder</h4><ul><li>Bacteremia: Vancomycin 1,000–1,250 mg IV q12h (AUC guided)</li><li>Pneumonia: Linezolid 600 mg IV q12h (better lung penetration)</li><li>VRE/Dapto-fail: Linezolid 600 mg q12h or Daptomycin 700+ mg q24h</li><li>Salvage: Ceftaroline + Daptomycin combo</li></ul></div>
+      <div class="qrc warn"><h4>⚠️ Never Forget — GP</h4><ul><li>Daptomycin: NEVER in pneumonia (surfactant)</li><li>Vancomycin: infuse ≥60 min/g (Red Man prevention)</li><li>Linezolid + SSRIs: Serotonin Syndrome risk</li><li>MSSA confirmed: switch OFF Vancomycin to Oxacillin</li></ul></div>
+      <div class="qrc green"><h4>✅ Empiric Hospital GP Sepsis (70 kg)</h4><ul><li>Vancomycin 1,000–1,250 mg IV q12h (AUC-guided)</li><li>De-escalate at 48–72h when culture sensitivity known</li><li>Add β-lactam if MSSA more likely (community-onset)</li></ul></div>
+    </div>
+  </div>
+</div><!-- end panel-gp -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     GRAM NEGATIVE IV
+═══════════════════════════════════════════════════════ -->
+<div id="panel-gn" class="panel">
+  <div class="sec-head gn">
+    <h2>Gram Negative (GN) — IV Antibiotics</h2>
+    <span class="gbadge gn">Thin Wall · Outer Membrane · LPS · Pink Stain</span>
+    <span class="sec-desc">Stepwise: Simple → MDR</span>
+  </div>
+
+  <div class="callout red"><span>ℹ️</span><span><strong>Key GN Organisms:</strong> E. coli · Klebsiella pneumoniae (ESBL/KPC) · Pseudomonas aeruginosa · Acinetobacter baumannii (XDR) · N. meningitidis · Salmonella typhi · Bacteroides fragilis · H. influenzae</span></div>
+
+  <div class="ladder">
+    <span class="ladder-title">GN Ladder:</span>
+    <span class="lstep s1">Step 1 — Community GN</span><span class="l-arr">→</span>
+    <span class="lstep s1">Step 2 — Hospital GN / Pseudomonas</span><span class="l-arr">→</span>
+    <span class="lstep s2">Step 3 — ESBL</span><span class="l-arr">→</span>
+    <span class="lstep s2">Step 4 — KPC / AmpC</span><span class="l-arr">→</span>
+    <span class="lstep s3">Step 5 — NDM / XDR</span>
+  </div>
+
+  <!-- STEP 1-2 GN -->
+  <div class="dtable-wrap">
+    <div class="dtable-hdr l1">✅ Step 1–2 — Community & Simple Hospital GN Infections</div>
+    <table class="dt">
+      <thead><tr><th>Drug</th><th>Standard Dose</th><th>Dose — 70 kg</th><th>Coverage</th><th>Best Used For</th><th>Key Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="dn">Ceftriaxone</span><span class="dc">3rd Gen Cephalosporin · β-lactam</span><span class="step-label s1">Step 1</span></td>
+          <td><div class="dm">1–2 g IV q24h</div><div class="dd">Typhoid/Meningitis: 2 g IV q12h</div></td>
+          <td><span class="d70">2 g IV q24h<br>Typhoid/Meningitis: 2 g q12h</span></td>
+          <td class="covs"><span class="cv gn">E. coli (community)</span><span class="cv gn">Klebsiella (non-ESBL)</span><span class="cv gn">H. influenzae</span><span class="cv gn">N. meningitidis</span><span class="cv gn">Salmonella typhi</span></td>
+          <td class="notes-td"><span class="fl g">Community UTI/pyelonephritis</span><span class="fl g">Typhoid fever (Step 1 in Pakistan)</span><span class="fl g">CAP, bacterial meningitis</span></td>
+          <td class="notes-td">No renal adjustment (biliary excretion)<br><span class="fl r">NOT ESBL · NOT Pseudomonas</span><br>Add Dexamethasone for meningitis<br>Widely available in Pakistan</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Gentamicin</span><span class="dc">Aminoglycoside · 30S ribosome inhibitor</span><span class="step-label s1">Step 1</span></td>
+          <td><div class="dm">5–7 mg/kg IV q24h (EID)</div><div class="dd">Synergy dose: 1 mg/kg q8h · Monitor levels</div></td>
+          <td><span class="d70">420 mg IV q24h (6 mg/kg)<br>→ Synergy (endocarditis): 140 mg q8h</span></td>
+          <td class="covs"><span class="cv gn">GN rods (synergy)</span><span class="cv gn">Pseudomonas</span><span class="cv gp">Synergy with β-lactams</span></td>
+          <td class="notes-td"><span class="fl g">Combination with β-lactam for GN sepsis</span><span class="fl g">Enterococcal endocarditis synergy</span><span class="fl g">Plague, Tularemia, Brucella</span></td>
+          <td class="notes-td">Once-daily (EID) = same efficacy, less toxicity<br><span class="fl r">Nephrotoxic + Ototoxic</span> — monitor levels; avoid &gt;7 days<br>Peak (Cmax/MIC &gt;10) · Trough (&lt;1 mcg/mL)<br><span class="fl r">Avoid in myasthenia gravis, pregnancy</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Amikacin</span><span class="dc">Aminoglycoside · 30S ribosome inhibitor</span><span class="step-label s1">Step 1</span></td>
+          <td><div class="dm">15–20 mg/kg IV q24h</div><div class="dd">Monitor peak (&gt;60 mcg/mL) and trough (&lt;5 mcg/mL)</div></td>
+          <td><span class="d70">1,050–1,400 mg IV q24h<br>→ Practical: 1,200 mg q24h</span></td>
+          <td class="covs"><span class="cv gn">MDR GN rods</span><span class="cv gn">Pseudomonas</span><span class="cv gn">ESBL (combination)</span></td>
+          <td class="notes-td"><span class="fl g">MDR organisms — more resistant to modifying enzymes than Gentamicin</span><span class="fl g">Mycobacterium (NTM, TB — adjunct)</span></td>
+          <td class="notes-td">Preferred over Gentamicin for MDR pathogens<br><span class="fl r">Nephrotoxic + Ototoxic</span><br>Peak &gt;60 mcg/mL · Trough &lt;5 mcg/mL<br>Avoid prolonged courses (&gt;10 days)</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Metronidazole</span><span class="dc">Nitroimidazole · DNA strand disruption</span><span class="step-label s1">Step 1</span></td>
+          <td><div class="dm">500 mg IV q8h</div><div class="dd">Loading option: 1 g IV then 500 mg q8h</div></td>
+          <td><span class="d70">500 mg IV q8h<br>(fixed dose)</span></td>
+          <td class="covs"><span class="cv an">GN Anaerobes</span><span class="cv an">GP Anaerobes</span><span class="cv gn">Bacteroides fragilis</span><span class="cv gp">C. difficile (mild)</span></td>
+          <td class="notes-td"><span class="fl g">Intra-abdominal infection (+ GN cover)</span><span class="fl g">Aspiration pneumonia component</span><span class="fl g">Brain abscess (anaerobic)</span></td>
+          <td class="notes-td">No aerobic coverage — ALWAYS combine with GN agent<br><span class="fl a">Avoid alcohol</span> (disulfiram reaction: flushing, vomiting)<br>No renal adjustment needed<br>C. diff: now prefer Oral Vancomycin/Fidaxomicin (Metro only for mild)</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Cefepime</span><span class="dc">4th Gen Cephalosporin · β-lactam</span><span class="step-label s2">Step 2</span></td>
+          <td><div class="dm">1–2 g IV q8h</div><div class="dd">Severe/Pseudomonas: 2 g q8h · Extended infusion: 2 g over 3h q8h</div></td>
+          <td><span class="d70">2 g IV q8h<br>EI: 2 g over 3h q8h (better for resistant Pseudomonas)</span></td>
+          <td class="covs"><span class="cv gn">Pseudomonas</span><span class="cv gn">Enterobacteriaceae</span><span class="cv gp">Streptococcus</span></td>
+          <td class="notes-td"><span class="fl g">1st choice: Febrile Neutropenia (monotherapy)</span><span class="fl g">HAP/VAP (non-ESBL)</span><span class="fl g">Pseudomonas infections</span></td>
+          <td class="notes-td"><span class="fl r">Neurotoxicity (NCSE)</span> — altered consciousness in renal impairment; EEG if confused<br>Reduce dose at CrCl &lt;60 mL/min<br>ESBL: unreliable despite susceptibility (inoculum effect)</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Pip-Tazo <small>(Piperacillin-Tazobactam)</small></span><span class="dc">Ureidopenicillin + β-lactamase inhibitor</span><span class="step-label s2">Step 2</span></td>
+          <td><div class="dm">3.375 g IV q6h or 4.5 g q8h</div><div class="dd">Extended infusion (EI): 3.375–4.5 g over 4h q8h — recommended for resistant organisms</div></td>
+          <td><span class="d70">4.5 g IV q8h (standard)<br>EI: 4.5 g over 4h q8h (MDR/Pseudomonas)</span></td>
+          <td class="covs"><span class="cv gn">Pseudomonas</span><span class="cv gn">E. coli · Klebsiella</span><span class="cv gp">Streptococcus</span><span class="cv an">Anaerobes</span><span class="cv no">NOT MRSA</span></td>
+          <td class="notes-td"><span class="fl g">Empiric HAP/VAP</span><span class="fl g">Intra-abdominal infections</span><span class="fl g">Neutropenic fever (+ Vancomycin)</span></td>
+          <td class="notes-td">EI (4h infusion) maximizes T&gt;MIC — standard ICU practice<br><span class="fl r">Neurotoxicity</span> in renal failure — encephalopathy, seizures<br>Vancomycin + Pip-Tazo → ↑↑ nephrotoxicity<br><span class="fl r">NOT reliable for ESBL</span> despite tazobactam</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- STEP 3-4 GN ESBL/KPC -->
+  <div class="dtable-wrap">
+    <div class="dtable-hdr l2">🔶 Step 3–4 — ESBL, AmpC, KPC-producing Organisms</div>
+    <table class="dt">
+      <thead><tr><th>Drug</th><th>Standard Dose</th><th>Dose — 70 kg</th><th>Coverage</th><th>Best Used For</th><th>Key Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="dn">Meropenem</span><span class="dc">Carbapenem · Broadest β-lactam, lowest seizure risk</span><span class="step-label s2">Step 3</span></td>
+          <td><div class="dm">1–2 g IV q8h</div><div class="dd">Meningitis: 2 g q8h · EI: 2 g over 3h q8h for resistant organisms</div></td>
+          <td><span class="d70">1 g IV q8h (moderate infections)<br>2 g IV q8h (severe / ESBL / CNS / Pseudomonas)</span></td>
+          <td class="covs"><span class="cv gn">ESBL</span><span class="cv gn">Pseudomonas</span><span class="cv gn">Acinetobacter</span><span class="cv gp">MSSA · Streptococcus</span><span class="cv an">Anaerobes</span></td>
+          <td class="notes-td"><span class="fl g">ESBL infections (gold standard)</span><span class="fl g">CNS infections — lowest seizure risk carbapenem</span><span class="fl g">HAP/VAP (severe)</span><span class="fl g">Febrile neutropenia (second line)</span></td>
+          <td class="notes-td"><span class="fl g">Lowest seizure risk</span> of all carbapenems — safe for meningitis<br><span class="fl r">NOT MRSA · NOT VRE · NOT Enterococcus faecium</span><br>KPC/NDM: may fail → use Caz-Avi<br>Dose reduce: CrCl &lt;50 mL/min</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Ertapenem</span><span class="dc">Carbapenem · Once-daily, no Pseudomonas</span><span class="step-label s2">Step 3</span></td>
+          <td><div class="dm">1 g IV q24h</div><div class="dd">Infuse over 30 min</div></td>
+          <td><span class="d70">1 g IV q24h<br>(fixed dose — not weight-based)</span></td>
+          <td class="covs"><span class="cv gn">ESBL</span><span class="cv gn">Enterobacteriaceae</span><span class="cv an">Anaerobes</span><span class="cv no">NOT Pseudomonas</span><span class="cv no">NOT Acinetobacter</span></td>
+          <td class="notes-td"><span class="fl g">ESBL UTI / pyelonephritis</span><span class="fl g">Complicated intra-abdominal infection</span><span class="fl g">OPAT — once-daily advantage at home</span><span class="fl g">Step-down after Meropenem</span></td>
+          <td class="notes-td"><span class="fl r">NO Pseudomonas · NO Acinetobacter</span> — critical gap<br>Do NOT use if Pseudomonas is in the differential<br>Dose: CrCl &lt;30 → 500 mg q24h<br>Ideal for discharge on OPAT</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Ceftazidime-Avibactam <small>(Caz-Avi)</small></span><span class="dc">5th Gen Ceph + novel β-lactamase inhibitor · Avybaz</span><span class="step-label s2">Step 4</span></td>
+          <td><div class="dm">2.5 g IV q8h</div><div class="dd">(Ceftazidime 2 g + Avibactam 0.5 g) · Infuse over 2h</div></td>
+          <td><span class="d70">2.5 g IV q8h<br>(fixed dose — strict renal adjustment: CrCl 31–50 → 1.25 g q8h; &lt;30 → 0.94 g q24h)</span></td>
+          <td class="covs"><span class="cv gn">KPC</span><span class="cv gn">OXA-48</span><span class="cv gn">ESBL</span><span class="cv gn">AmpC</span><span class="cv no">NOT NDM/MBL</span></td>
+          <td class="notes-td"><span class="fl g">1st choice: KPC-producing Klebsiella</span><span class="fl g">OXA-48 carbapenemase</span><span class="fl g">MDR Pseudomonas (Caz-Avi + Aztreonam for NDM)</span></td>
+          <td class="notes-td">Avibactam inhibits class A, C, D β-lactamases — NOT MBL (NDM)<br>For NDM: <strong>Add Aztreonam</strong> (Caz-Avi + Aztreonam)<br><span class="fl r">Renal adjustment CRITICAL</span> — underdosing → rapid resistance<br>Resistance can emerge on therapy — combine if possible</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Aztreonam</span><span class="dc">Monobactam · GN only specialist</span><span class="step-label s2">Step 4</span></td>
+          <td><div class="dm">1–2 g IV q6–8h</div><div class="dd">Severe MDR: 2 g q6h · Combine with Caz-Avi for NDM</div></td>
+          <td><span class="d70">2 g IV q8h (standard)<br>NDM combination: 2 g q6h</span></td>
+          <td class="covs"><span class="cv gn">Aerobic GN rods</span><span class="cv gn">Pseudomonas</span><span class="cv no">NO GP</span><span class="cv no">NO Anaerobes</span></td>
+          <td class="notes-td"><span class="fl g">Safe in penicillin allergy</span><span class="fl g">NDM combination: Caz-Avi + Aztreonam (MBL bypass strategy)</span></td>
+          <td class="notes-td"><span class="fl g">Safe in PCN allergy</span> — minimal cross-reactivity (monobactam)<br>Exception: cross-reacts with Ceftazidime (same R1 side chain)<br>Zero GP or anaerobic activity — must combine<br>Dose adjust: CrCl &lt;30 → 1 g q12h</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- STEP 5 GN NDM/XDR -->
+  <div class="dtable-wrap">
+    <div class="dtable-hdr l3">🔴 Step 5 — NDM / XDR / Last Resort GN Therapy</div>
+    <table class="dt">
+      <thead><tr><th>Drug</th><th>Standard Dose</th><th>Dose — 70 kg</th><th>Coverage</th><th>Best Used For</th><th>Key Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="dn">Colistin (CMS) / Polymyxin B</span><span class="dc">Polymyxin · Membrane depolarisation</span><span class="step-label s3">Step 5</span></td>
+          <td><div class="dm">CMS Load: 9 MU IV × 1</div><div class="dd">CMS Maint: 4.5 MU IV q12h · Polymyxin B: 1.25–1.5 mg/kg IBW q12h</div></td>
+          <td><span class="d70">CMS: Load 9 MU, then 4.5 MU q12h<br>Polymyxin B: ~87–105 mg q12h (IBW 70 kg)<br>Polymyxin B preferred — predictable PK</span></td>
+          <td class="covs"><span class="cv gn">XDR Pseudomonas</span><span class="cv gn">XDR Acinetobacter</span><span class="cv gn">NDM/KPC (combination)</span></td>
+          <td class="notes-td"><span class="fl g">XDR/PDR GN — no other option</span><span class="fl g">Always in combination (+ Meropenem, Rifampicin, or Fosfomycin)</span></td>
+          <td class="notes-td"><span class="fl r">ALWAYS in combination</span> — monotherapy → rapid resistance<br><span class="fl r">Nephrotoxicity 30–50%</span> — daily creatinine<br><span class="fl a">Polymyxin B preferred</span> over CMS — NOT renally cleared, predictable<br>Dose based on IBW (not actual weight in obesity)</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Tigecycline</span><span class="dc">Glycylcycline · Tetracycline derivative</span><span class="step-label s3">Step 5</span></td>
+          <td><div class="dm">Load: 100 mg IV × 1</div><div class="dd">Maint: 50 mg IV q12h · High-dose: 100 mg q12h for Acinetobacter (off-label)</div></td>
+          <td><span class="d70">Load: 100 mg IV once<br>Maint: 50 mg IV q12h<br>High-dose (XDR Acin): 100 mg IV q12h</span></td>
+          <td class="covs"><span class="cv gp">MRSA</span><span class="cv gn">ESBL · Acinetobacter</span><span class="cv an">Anaerobes</span><span class="cv no">NOT Pseudomonas</span><span class="cv no">NOT Proteus</span></td>
+          <td class="notes-td"><span class="fl g">XDR Acinetobacter (high-dose, in combination)</span><span class="fl g">MDR intra-abdominal infections</span><span class="fl r">NEVER for bacteremia or UTI</span></td>
+          <td class="notes-td"><span class="fl r">FDA Black Box Warning</span> — ↑ all-cause mortality vs comparators in clinical trials<br><span class="fl r">Low serum levels</span> — NEVER for bacteremia, UTI, or endocarditis<br>Nausea/vomiting ~30% — pre-medicate with antiemetic<br>High-dose regime used for severe Acinetobacter (off-label evidence)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="quick-box">
+    <h3>🧠 GN Quick Decision Rules — 70 kg Adult</h3>
+    <div class="qr-grid">
+      <div class="qrc gn"><h4>ESBL → Carbapenem Choice</h4><ul><li>Meropenem 1–2 g q8h — gold standard for severe</li><li>Ertapenem 1 g q24h — ESBL UTI/abdominal, OPAT</li><li>Never rely on Pip-Tazo or Ceftriaxone for ESBL</li></ul></div>
+      <div class="qrc gn"><h4>Pseudomonas → Coverage Ladder</h4><ul><li>Step 1: Pip-Tazo 4.5 g q8h EI (4h) or Cefepime 2 g q8h EI (3h)</li><li>Step 2: Meropenem 2 g q8h EI (3h)</li><li>Step 3: Caz-Avi 2.5 g q8h</li><li>XDR: Colistin + Meropenem combination</li></ul></div>
+      <div class="qrc warn"><h4>⚠️ Never Forget — GN</h4><ul><li>Ertapenem: NO Pseudomonas (most dangerous omission)</li><li>Cefepime: reduce dose in renal impairment (NCSE risk)</li><li>Colistin: ALWAYS combine — monotherapy = resistance</li><li>Tigecycline: NEVER for bacteremia or UTI</li></ul></div>
+      <div class="qrc green"><h4>✅ Empiric Severe GN Sepsis (ICU, 70 kg)</h4><ul><li>Meropenem 2 g IV q8h + Amikacin 1,200 mg IV q24h</li><li>Or Pip-Tazo 4.5 g q8h EI if low ESBL risk</li><li>De-escalate at 48–72h based on culture sensitivity</li></ul></div>
+    </div>
+  </div>
+</div><!-- end panel-gn -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     BROAD SPECTRUM IV
+═══════════════════════════════════════════════════════ -->
+<div id="panel-broad" class="panel">
+  <div class="sec-head broad">
+    <h2>Broad Spectrum — IV Antibiotics</h2>
+    <span class="gbadge broad">GP + GN + Anaerobic Coverage</span>
+    <span class="sec-desc">Empiric severe sepsis · ICU · Unknown source</span>
+  </div>
+
+  <div class="callout green"><span>💡</span><span><strong>Principle:</strong> Broad spectrum = empiric cover when organism unknown. Always de-escalate when cultures return. Never maintain unnecessary broad-spectrum therapy beyond 48–72h — antibiotic stewardship saves lives.</span></div>
+
+  <div class="ladder">
+    <span class="ladder-title">Broad Spectrum Ladder:</span>
+    <span class="lstep s1">Level 1 — CAP/Moderate Sepsis</span><span class="l-arr">→</span>
+    <span class="lstep s1">Level 2 — HAP/Abdominal Sepsis</span><span class="l-arr">→</span>
+    <span class="lstep s2">Level 3 — ICU/Severe Sepsis</span><span class="l-arr">→</span>
+    <span class="lstep s3">Level 4 — Septic Shock / XDR</span>
+  </div>
+
+  <div class="dtable-wrap">
+    <div class="dtable-hdr lbroad">⚡ Broad Spectrum Antibiotics — Stepwise from Moderate to Extreme</div>
+    <table class="dt">
+      <thead><tr><th>Drug</th><th>Standard Dose</th><th>Dose — 70 kg</th><th>Coverage</th><th>Best Used For</th><th>Key Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="dn">Ampicillin-Sulbactam <small>(Unasyn)</small></span><span class="dc">Aminopenicillin + β-lactamase inhibitor</span><span class="step-label s1">Level 1</span></td>
+          <td><div class="dm">1.5–3 g IV q6h</div><div class="dd">(Ampicillin 1–2 g + Sulbactam 0.5–1 g)</div></td>
+          <td><span class="d70">3 g IV q6h<br>(Ampicillin 2g + Sulbactam 1g)</span></td>
+          <td class="covs"><span class="cv gp">Streptococcus · MSSA</span><span class="cv gn">E. coli · Klebsiella (non-ESBL)</span><span class="cv an">Anaerobes</span><span class="cv no">NOT MRSA · NOT Pseudomonas</span></td>
+          <td class="notes-td"><span class="fl g">Aspiration pneumonia</span><span class="fl g">Intra-abdominal (mild-moderate)</span><span class="fl g">Lemierre syndrome (Fusobacterium)</span><span class="fl g">Diabetic foot (mild)</span></td>
+          <td class="notes-td">Good anaerobic cover — ideal for community aspiration<br>Sulbactam has intrinsic activity vs Acinetobacter<br><span class="fl r">NOT MRSA · NOT Pseudomonas · NOT ESBL</span><br>High E. coli resistance in Pakistan — culture first</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Amoxicillin-Clavulanate <small>(Augmentin IV)</small></span><span class="dc">Aminopenicillin + β-lactamase inhibitor</span><span class="step-label s1">Level 1</span></td>
+          <td><div class="dm">1.2 g IV q8h</div><div class="dd">(Amoxicillin 1 g + Clavulanate 200 mg)</div></td>
+          <td><span class="d70">1.2 g IV q8h<br>(fixed dosing)</span></td>
+          <td class="covs"><span class="cv gp">Streptococcus · MSSA</span><span class="cv gn">H. influenzae · Moraxella</span><span class="cv an">Anaerobes</span></td>
+          <td class="notes-td"><span class="fl g">CAP (moderate severity)</span><span class="fl g">Sinusitis/otitis media</span><span class="fl g">Bite wounds</span></td>
+          <td class="notes-td">Hepatotoxicity risk — especially with prolonged use<br>Diarrhoea/GI disturbance common<br>Widely available in Pakistan (IV less commonly used)<br><span class="fl r">NOT Pseudomonas · NOT ESBL · NOT MRSA</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Pip-Tazo + Vancomycin</span><span class="dc">Standard empiric ICU combination</span><span class="step-label s2">Level 2</span></td>
+          <td><div class="dm">Pip-Tazo 4.5 g q8h EI + Vanco 1,000–1,250 mg q12h</div><div class="dd">Used together for suspected mixed GP+GN+MRSA sepsis</div></td>
+          <td><span class="d70">Pip-Tazo: 4.5 g over 4h q8h<br>Vancomycin: 1,000–1,250 mg q12h</span></td>
+          <td class="covs"><span class="cv gp">MRSA · Streptococcus</span><span class="cv gn">Pseudomonas · Klebsiella</span><span class="cv an">Anaerobes</span></td>
+          <td class="notes-td"><span class="fl g">Empiric HAP/VAP</span><span class="fl g">Neutropenic sepsis</span><span class="fl g">Unknown source hospital sepsis</span></td>
+          <td class="notes-td"><span class="fl r">↑↑ Nephrotoxicity</span> when Vancomycin + Pip-Tazo combined — monitor creatinine daily<br>De-escalate at 48–72h when cultures known<br>Consider switching to Meropenem if ESBL suspected</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Meropenem + Vancomycin</span><span class="dc">Severe sepsis / ICU combination</span><span class="step-label s2">Level 3</span></td>
+          <td><div class="dm">Mero 1–2 g q8h EI + Vanco 1,000–1,250 mg q12h</div><div class="dd">Gold standard empiric combo for ICU / healthcare-associated sepsis</div></td>
+          <td><span class="d70">Meropenem: 2 g over 3h q8h<br>Vancomycin: 1,000–1,250 mg q12h (AUC-guided)</span></td>
+          <td class="covs"><span class="cv gp">MRSA · Enterococcus (VSE)</span><span class="cv gn">ESBL · Pseudomonas · Acinetobacter</span><span class="cv an">Anaerobes</span></td>
+          <td class="notes-td"><span class="fl g">Severe healthcare-associated sepsis</span><span class="fl g">ICU unknown source sepsis</span><span class="fl g">Post-surgical infections</span><span class="fl g">Immunocompromised severe infection</span></td>
+          <td class="notes-td">Monitor renal function daily (nephrotoxic combination)<br>De-escalate urgently — combination should rarely exceed 72h without culture guidance<br>Add Antifungal (Fluconazole/Micafungin) if Candida risk</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Imipenem-Cilastatin</span><span class="dc">Carbapenem (broadest) + renal protector</span><span class="step-label s2">Level 3</span></td>
+          <td><div class="dm">500 mg–1 g IV q6h</div><div class="dd">Max 4 g/day · Cilastatin prevents nephrotoxic metabolite</div></td>
+          <td><span class="d70">500 mg IV q6h (moderate)<br>1 g IV q6h (severe, 4 g/day max)</span></td>
+          <td class="covs"><span class="cv gp">MSSA · Streptococcus</span><span class="cv gn">Pseudomonas · ESBL</span><span class="cv an">Anaerobes</span><span class="cv no">NOT MRSA · NOT VRE</span></td>
+          <td class="notes-td"><span class="fl g">Broad empiric when Meropenem not available</span><span class="fl g">Non-CNS severe sepsis</span></td>
+          <td class="notes-td"><span class="fl r">HIGHEST seizure risk</span> of all carbapenems — avoid in epilepsy, CNS infections<br>Cilastatin inhibits renal dehydropeptidase-I<br>Reduce dose aggressively in renal failure<br>Prefer Meropenem for CNS/meningitis</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Meropenem + Colistin <small>(± Rifampicin)</small></span><span class="dc">XDR combination rescue therapy</span><span class="step-label s3">Level 4</span></td>
+          <td><div class="dm">Mero 2 g q8h EI + Colistin 4.5 MU q12h</div><div class="dd">± Rifampicin 600 mg IV/PO q24h (for biofilm/device)</div></td>
+          <td><span class="d70">Meropenem: 2 g over 3h q8h<br>Polymyxin B: 87–105 mg q12h (preferred)<br>Rifampicin (adjunct): 600 mg q24h</span></td>
+          <td class="covs"><span class="cv gn">XDR Acinetobacter</span><span class="cv gn">XDR Pseudomonas</span><span class="cv gn">NDM/KPC (synergy)</span></td>
+          <td class="notes-td"><span class="fl g">XDR/PDR Acinetobacter VAP/BSI</span><span class="fl g">No other option available</span></td>
+          <td class="notes-td">Daily creatinine — extreme nephrotoxicity risk<br>Rifampicin: strong CYP inducer — check drug interactions<br>Add Tigecycline 100 mg q12h (high-dose) for Acinetobacter lung<br>Consult ID specialist mandatory</td>
+        </tr>
+        <tr>
+          <td><span class="dn">Caz-Avi + Aztreonam</span><span class="dc">NDM rescue combination</span><span class="step-label s3">Level 4</span></td>
+          <td><div class="dm">Caz-Avi 2.5 g q8h + Aztreonam 2 g q8h</div><div class="dd">Aztreonam targets NDM (MBL) · Caz-Avi protects Aztreonam from other β-lactamases</div></td>
+          <td><span class="d70">Caz-Avi: 2.5 g over 2h q8h<br>Aztreonam: 2 g over 30 min q8h</span></td>
+          <td class="covs"><span class="cv gn">NDM · KPC · OXA · MBL</span><span class="cv gn">XDR GN rods</span></td>
+          <td class="notes-td"><span class="fl g">NDM-producing organisms</span><span class="fl g">Pan-carbapenem resistant GN</span></td>
+          <td class="notes-td">Novel combination — Caz-Avi protects Aztreonam from AmpC/ESBL/KPC<br>Aztreonam is stable against MBL — covers NDM<br>Both require renal adjustment — coordinate carefully<br>Limited clinical data — ID consultation essential</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="quick-box">
+    <h3>🧠 Empiric Sepsis Protocol — 70 kg Adult (2024 Surviving Sepsis Guidelines)</h3>
+    <div class="qr-grid">
+      <div class="qrc br"><h4>CAP / Community Sepsis</h4><ul><li>Ceftriaxone 2 g IV q24h + Azithromycin 500 mg IV q24h (atypical cover)</li><li>Duration: 5–7 days (reassess at 48h)</li><li>Switch to oral when haemodynamically stable</li></ul></div>
+      <div class="qrc br"><h4>HAP / VAP Empiric (Non-ESBL risk)</h4><ul><li>Pip-Tazo 4.5 g IV EI q8h + Vancomycin 1,000 mg IV q12h</li><li>De-escalate at 48h</li><li>If ESBL risk → Meropenem 2 g q8h instead</li></ul></div>
+      <div class="qrc br"><h4>Septic Shock (Unknown source, ICU)</h4><ul><li>Meropenem 2 g IV q8h EI + Vancomycin 1,000–1,250 mg q12h (AUC)</li><li>Consider Antifungal if Candida risk</li><li>Cultures BEFORE antibiotics — but don't delay &gt;1 hour</li></ul></div>
+      <div class="qrc warn"><h4>⚠️ Antibiotic Stewardship Rules</h4><ul><li>De-escalate at 48–72h when culture data available</li><li>Do NOT continue carbapenem beyond necessity</li><li>Total duration: 5–7 days most infections (not 10–14)</li><li>Short courses = less resistance, less toxicity, less C. diff</li></ul></div>
+    </div>
+  </div>
+</div><!-- end panel-broad -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     ORAL ANTIBIOTICS — PAKISTAN EDITION
+═══════════════════════════════════════════════════════ -->
+<div id="panel-oral" class="panel">
+  <div class="sec-head oral">
+    <h2>Oral Antibiotics — Pakistan Edition</h2>
+    <span class="gbadge oral">Brands · Doses · Duration · Side Effects</span>
+    <span class="sec-desc">Common brands available in Pakistan</span>
+  </div>
+
+  <div class="callout purple"><span>💊</span><span><strong>Pakistan Note:</strong> Brand names listed are commonly available in Pakistan. Generic names preferred for prescription. Always check local antibiogram for E. coli / Klebsiella resistance patterns — high FQ and TMP-SMX resistance common in Pakistan. Prices vary — generics recommended where available.</span></div>
+
+  <!-- GP ORAL -->
+  <div class="dtable-wrap">
+    <div class="oral-section-title">🔵 ORAL ANTIBIOTICS — Gram Positive Infections</div>
+    <table class="dt">
+      <thead><tr><th>Drug (Generic)</th><th>Pakistan Brands</th><th>Adult Dose (70 kg)</th><th>Duration</th><th>Indications</th><th>Key Side Effects</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="dn">Amoxicillin</span><span class="dc">Aminopenicillin</span></td>
+          <td><span class="brand">Amoxil, Amoxicillin</span><span class="brand-list">Citamox, Flamox, Moxypen (500 mg, 250 mg caps)</span></td>
+          <td><div class="dm">500 mg–1 g PO q8h</div><div class="dd">Strep pharyngitis: 500 mg q8h × 10 days</div></td>
+          <td><span class="duration-pill">5–10 days</span></td>
+          <td class="indication-cell"><span class="ind-tag">Strep pharyngitis</span><span class="ind-tag">Otitis media</span><span class="ind-tag">Community pneumonia (mild)</span><span class="ind-tag">Sinusitis</span><span class="ind-tag">Dental infections</span></td>
+          <td class="se-cell"><span class="se">Diarrhoea</span><span class="se">Nausea</span><span class="se">Rash</span><span class="se">PCN allergy (1%)</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Amoxicillin-Clavulanate</span><span class="dc">Aminopenicillin + β-lactamase inhibitor</span></td>
+          <td><span class="brand">Augmentin, Clavum</span><span class="brand-list">Amoksiklav, Bidmentin, Curam (625 mg tabs: Amox 500 + Clav 125)</span></td>
+          <td><div class="dm">625 mg PO q8h or 1 g q12h</div><div class="dd">875/125 mg q12h (standard adult)</div></td>
+          <td><span class="duration-pill">5–7 days</span></td>
+          <td class="indication-cell"><span class="ind-tag">Sinusitis</span><span class="ind-tag">Otitis media</span><span class="ind-tag">CAP (mild-mod)</span><span class="ind-tag">Skin infections</span><span class="ind-tag">Bite wounds</span><span class="ind-tag">Diabetic foot (mild)</span></td>
+          <td class="se-cell"><span class="se">GI upset / Diarrhoea</span><span class="se">Nausea</span><span class="se">Hepatotoxicity (prolonged)</span><span class="se">Rash</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Flucloxacillin / Cloxacillin</span><span class="dc">Anti-staphylococcal Penicillin</span></td>
+          <td><span class="brand">Floxapen, Cloxacillin</span><span class="brand-list">Floxapen (250 mg, 500 mg caps); Clox 500, Clopen</span></td>
+          <td><div class="dm">500 mg PO q6h (fasting — 30 min before food)</div><div class="dd">Severe MSSA: 1 g PO q6h</div></td>
+          <td><span class="duration-pill">7–14 days (SSTI)<br>4–6 weeks (osteomyelitis)</span></td>
+          <td class="indication-cell"><span class="ind-tag">MSSA skin/soft tissue infections</span><span class="ind-tag">Osteomyelitis (step-down)</span><span class="ind-tag">Impetigo (extensive)</span><span class="ind-tag">Cellulitis (MSSA)</span></td>
+          <td class="se-cell"><span class="se">Hepatotoxicity (DILI)</span><span class="se">GI upset</span><span class="se">Cholestatic jaundice</span><span class="se">Must take fasting</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Clindamycin</span><span class="dc">Lincosamide · 50S inhibitor</span></td>
+          <td><span class="brand">Dalacin C, Clindamycin</span><span class="brand-list">Clinaderm, Clindatec (150 mg, 300 mg caps)</span></td>
+          <td><div class="dm">300–450 mg PO q8h</div><div class="dd">Dental: 300 mg q8h × 5–7 days</div></td>
+          <td><span class="duration-pill">5–7 days (SSTI)<br>4–6 weeks (bone)</span></td>
+          <td class="indication-cell"><span class="ind-tag">MSSA/MRSA SSTI (step-down)</span><span class="ind-tag">Dental infections</span><span class="ind-tag">Osteomyelitis step-down</span><span class="ind-tag">Aspiration pneumonia (anaerobic)</span></td>
+          <td class="se-cell"><span class="se">C. difficile colitis</span><span class="se">Diarrhoea (most common)</span><span class="se">Nausea</span><span class="se">Metallic taste</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Linezolid</span><span class="dc">Oxazolidinone · 50S+30S</span></td>
+          <td><span class="brand">Zyvox, Linzolid</span><span class="brand-list">Linezo, Linac (600 mg tabs) — Expensive</span></td>
+          <td><div class="dm">600 mg PO q12h</div><div class="dd">Same as IV dose — 100% bioavailability</div></td>
+          <td><span class="duration-pill">10–14 days (max 28 days)</span></td>
+          <td class="indication-cell"><span class="ind-tag">MRSA (skin, soft tissue)</span><span class="ind-tag">VRE</span><span class="ind-tag">Step-down from IV Linezolid</span></td>
+          <td class="se-cell"><span class="se">Thrombocytopenia</span><span class="se">Serotonin Syndrome (+ SSRIs)</span><span class="se">Nausea</span><span class="se">Peripheral neuropathy (prolonged)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GN ORAL -->
+  <div class="dtable-wrap">
+    <div class="oral-section-title">🟠 ORAL ANTIBIOTICS — Gram Negative Infections</div>
+    <table class="dt">
+      <thead><tr><th>Drug (Generic)</th><th>Pakistan Brands</th><th>Adult Dose (70 kg)</th><th>Duration</th><th>Indications</th><th>Key Side Effects</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="dn">Ciprofloxacin</span><span class="dc">Fluoroquinolone (FQ) · DNA gyrase inhibitor</span></td>
+          <td><span class="brand">Ciproxin, Cipro</span><span class="brand-list">Ciplox, Cifran, Bacquinor, Ciprobay (250 mg, 500 mg, 750 mg tabs)</span></td>
+          <td><div class="dm">500–750 mg PO q12h</div><div class="dd">UTI: 500 mg q12h · Typhoid: 500 mg q12h · Pseudomonas: 750 mg q12h</div></td>
+          <td><span class="duration-pill">UTI: 3–7 days<br>Typhoid: 7–10 days<br>Osteomyelitis: 4–6 weeks</span></td>
+          <td class="indication-cell"><span class="ind-tag">UTI (uncomplicated)</span><span class="ind-tag">Typhoid fever (if susceptible)</span><span class="ind-tag">GI infections</span><span class="ind-tag">Pseudomonas (bone)</span><span class="ind-tag">Prostatitis</span></td>
+          <td class="se-cell"><span class="se">QTc prolongation</span><span class="se">Tendon rupture (elderly)</span><span class="se">Nausea / GI upset</span><span class="se">Avoid in children &lt;18</span><span class="se">Avoid in pregnancy</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Levofloxacin</span><span class="dc">Fluoroquinolone (FQ) · Respiratory FQ</span></td>
+          <td><span class="brand">Levaquin, Tavanic</span><span class="brand-list">Levoxa, Leflox, Levomac, Levoflox (250 mg, 500 mg, 750 mg tabs)</span></td>
+          <td><div class="dm">500–750 mg PO q24h</div><div class="dd">CAP: 500–750 mg q24h × 5–7 days</div></td>
+          <td><span class="duration-pill">CAP: 5–7 days<br>HAP: 8–15 days<br>TB (adjunct): months</span></td>
+          <td class="indication-cell"><span class="ind-tag">CAP (respiratory FQ)</span><span class="ind-tag">Typhoid (2nd line)</span><span class="ind-tag">UTI (2nd line)</span><span class="ind-tag">Legionella</span><span class="ind-tag">Atypical pneumonia</span></td>
+          <td class="se-cell"><span class="se">QTc prolongation</span><span class="se">Tendinopathy</span><span class="se">Insomnia</span><span class="se">Nausea</span><span class="se">Hypoglycaemia (elderly)</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Co-trimoxazole (TMP-SMX)</span><span class="dc">Trimethoprim + Sulfamethoxazole · DHFR inhibitor</span></td>
+          <td><span class="brand">Bactrim, Septran</span><span class="brand-list">Co-trim, SMZ-TMP, Trimazol (Tabs: TMP 160 mg + SMX 800 mg = DS)</span></td>
+          <td><div class="dm">1 DS tab (960 mg) PO q12h</div><div class="dd">PCP: 2 DS tabs q8h · UTI: 1 DS q12h × 3 days (simple)</div></td>
+          <td><span class="duration-pill">UTI: 3–7 days<br>PCP: 21 days<br>Nocardia: months</span></td>
+          <td class="indication-cell"><span class="ind-tag">UTI (where susceptible)</span><span class="ind-tag">PCP pneumonia (Pneumocystis)</span><span class="ind-tag">Nocardia</span><span class="ind-tag">Stenotrophomonas</span><span class="ind-tag">Toxoplasmosis (prophylaxis)</span></td>
+          <td class="se-cell"><span class="se">Steven-Johnson Syndrome (rare)</span><span class="se">Bone marrow suppression</span><span class="se">Renal (crystalluria)</span><span class="se">Hyperkalemia</span><span class="se">Avoid in pregnancy (folate)</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Nitrofurantoin</span><span class="dc">Nitrofuran · DNA/RNA damage</span></td>
+          <td><span class="brand">Macrobid, Furadantin</span><span class="brand-list">Nitrofur, Nifurantin, Macrodantin (50 mg, 100 mg caps)</span></td>
+          <td><div class="dm">100 mg (macrocrystal) PO q12h with food</div><div class="dd">Or 50–100 mg q6h (immediate release)</div></td>
+          <td><span class="duration-pill">3–7 days (acute UTI)<br>3–6 months (prophylaxis)</span></td>
+          <td class="indication-cell"><span class="ind-tag">Uncomplicated UTI (cystitis)</span><span class="ind-tag">Recurrent UTI prophylaxis</span><span class="ind-tag">E. coli (ESBL) UTI — often susceptible</span></td>
+          <td class="se-cell"><span class="se">Pulmonary toxicity (chronic)</span><span class="se">Nausea (take with food)</span><span class="se">Peripheral neuropathy (chronic)</span><span class="se">Avoid in CrCl &lt;30</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Fosfomycin trometamol</span><span class="dc">Phosphonic acid · MurA enzyme inhibitor</span></td>
+          <td><span class="brand">Monurol, Fosforal</span><span class="brand-list">Fosmicin, Urofos (3 g sachet, single dose)</span></td>
+          <td><div class="dm">3 g PO single dose (dissolved in water)</div><div class="dd">Recurrent: 3 g q48h × 3 doses</div></td>
+          <td><span class="duration-pill">Single dose (uncomplicated UTI)</span></td>
+          <td class="indication-cell"><span class="ind-tag">Uncomplicated cystitis (women)</span><span class="ind-tag">ESBL E. coli UTI</span><span class="ind-tag">When other oral options fail</span></td>
+          <td class="se-cell"><span class="se">Diarrhoea</span><span class="se">Nausea</span><span class="se">Headache</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Cefixime</span><span class="dc">3rd Gen Cephalosporin (oral) · β-lactam</span></td>
+          <td><span class="brand">Suprax, Cefspan</span><span class="brand-list">Cefspan, Hifen, Zifi, Cefodox, Topcef (200 mg, 400 mg tabs)</span></td>
+          <td><div class="dm">200–400 mg PO q12–24h</div><div class="dd">Typhoid: 400 mg q12h × 7–14 days</div></td>
+          <td><span class="duration-pill">Typhoid: 7–14 days<br>UTI: 7 days<br>Pharyngitis: 5 days</span></td>
+          <td class="indication-cell"><span class="ind-tag">Typhoid fever (2nd line after Ceftriaxone)</span><span class="ind-tag">Uncomplicated UTI</span><span class="ind-tag">GN pharyngitis</span><span class="ind-tag">AECOPD</span></td>
+          <td class="se-cell"><span class="se">Diarrhoea</span><span class="se">Nausea</span><span class="se">Abdominal pain</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BROAD/ATYPICAL ORAL -->
+  <div class="dtable-wrap">
+    <div class="oral-section-title">⚡ ORAL ANTIBIOTICS — Broad Spectrum, Atypicals &amp; Anaerobic Coverage</div>
+    <table class="dt">
+      <thead><tr><th>Drug (Generic)</th><th>Pakistan Brands</th><th>Adult Dose (70 kg)</th><th>Duration</th><th>Indications</th><th>Key Side Effects</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="dn">Azithromycin</span><span class="dc">Macrolide · 50S ribosome · Atypical cover</span></td>
+          <td><span class="brand">Zithromax, Azee</span><span class="brand-list">Azithral, Azicip, Zithrocin, Zeethro (250 mg, 500 mg tabs/caps) — widely available</span></td>
+          <td><div class="dm">500 mg PO q24h (Day 1: 500 mg, Days 2–5: 250 mg)</div><div class="dd">CAP: 500 mg q24h × 3–5 days · STI: 1 g single dose</div></td>
+          <td><span class="duration-pill">CAP: 3–5 days<br>STI: single dose<br>Typhoid: 7 days (3rd line)</span></td>
+          <td class="indication-cell"><span class="ind-tag">CAP (atypical: Mycoplasma, Legionella)</span><span class="ind-tag">Pertussis</span><span class="ind-tag">N. gonorrhoeae (+ Ceftriaxone)</span><span class="ind-tag">C. trachomatis</span><span class="ind-tag">Campylobacter diarrhoea</span></td>
+          <td class="se-cell"><span class="se">QTc prolongation</span><span class="se">GI upset</span><span class="se">Hearing loss (high dose/prolonged)</span><span class="se">Drug interactions (CYP)</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Clarithromycin</span><span class="dc">Macrolide · 50S ribosome</span></td>
+          <td><span class="brand">Klacid, Claribid</span><span class="brand-list">Clamycin, Clarith, Klaricid (250 mg, 500 mg tabs)</span></td>
+          <td><div class="dm">250–500 mg PO q12h</div><div class="dd">H. pylori triple therapy: 500 mg q12h × 14 days</div></td>
+          <td><span class="duration-pill">CAP: 7–14 days<br>H. pylori: 14 days</span></td>
+          <td class="indication-cell"><span class="ind-tag">CAP (atypical)</span><span class="ind-tag">H. pylori eradication (triple therapy)</span><span class="ind-tag">MAC prophylaxis (HIV)</span><span class="ind-tag">Skin/soft tissue infections</span></td>
+          <td class="se-cell"><span class="se">Bitter taste / metallic taste</span><span class="se">GI upset</span><span class="se">QTc prolongation</span><span class="se">CYP3A4 inhibitor (many interactions)</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Doxycycline</span><span class="dc">Tetracycline · 30S ribosome</span></td>
+          <td><span class="brand">Vibramycin, Doxy</span><span class="brand-list">Doxycap, Doxylin, Doltrex, Atridox (100 mg caps)</span></td>
+          <td><div class="dm">100 mg PO q12h (after meals)</div><div class="dd">Loading: 200 mg on Day 1, then 100 mg q12h</div></td>
+          <td><span class="duration-pill">CAP: 7–14 days<br>Brucella: 6 weeks<br>Malaria: 7 days</span></td>
+          <td class="indication-cell"><span class="ind-tag">CAP (atypical cover)</span><span class="ind-tag">Brucellosis (+ Rifampicin or Gentamicin)</span><span class="ind-tag">MRSA SSTI (community)</span><span class="ind-tag">Chlamydia/STIs</span><span class="ind-tag">Malaria prophylaxis</span><span class="ind-tag">Rickettsia</span></td>
+          <td class="se-cell"><span class="se">Photosensitivity</span><span class="se">Oesophagitis (must drink full glass water)</span><span class="se">GI upset</span><span class="se">Avoid in pregnancy / children &lt;8 yrs (teeth discolouration)</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Metronidazole</span><span class="dc">Nitroimidazole · Anaerobic &amp; protozoal</span></td>
+          <td><span class="brand">Flagyl, Metronid</span><span class="brand-list">Flagyl, Metrozol, Nidagyl, Metro-IV (200 mg, 400 mg, 500 mg tabs) — cheapest option</span></td>
+          <td><div class="dm">400–500 mg PO q8h</div><div class="dd">C. diff (mild): 500 mg q8h × 10 days (less preferred now)</div></td>
+          <td><span class="duration-pill">Anaerobic: 7–10 days<br>C. diff: 10 days<br>H. pylori: 14 days</span></td>
+          <td class="indication-cell"><span class="ind-tag">Amoebic dysentery / abscess</span><span class="ind-tag">Giardiasis</span><span class="ind-tag">Trichomonas</span><span class="ind-tag">BV (bacterial vaginosis)</span><span class="ind-tag">Anaerobic infections</span><span class="ind-tag">H. pylori (triple therapy)</span></td>
+          <td class="se-cell"><span class="se">Metallic taste</span><span class="se">Nausea</span><span class="se">Avoid alcohol (disulfiram reaction)</span><span class="se">Peripheral neuropathy (prolonged)</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Rifampicin (Rifampin)</span><span class="dc">RNA polymerase inhibitor · Antitubercular</span></td>
+          <td><span class="brand">Rimactane, Rifadin</span><span class="brand-list">Rifampicin, Rimstar (for TB), Rifagen (150 mg, 300 mg, 450 mg, 600 mg caps)</span></td>
+          <td><div class="dm">600 mg PO q24h (fasting)</div><div class="dd">TB: weight-based (10 mg/kg) · Meningococcal prophylaxis: 600 mg q12h × 2 days</div></td>
+          <td><span class="duration-pill">TB: 6 months<br>Prophylaxis: 2 days<br>Biofilm adjunct: 2–6 weeks</span></td>
+          <td class="indication-cell"><span class="ind-tag">Tuberculosis (essential component)</span><span class="ind-tag">N. meningitidis prophylaxis</span><span class="ind-tag">Biofilm infections (prosthetic joint) adjunct</span><span class="ind-tag">Brucella (+ Doxycycline)</span></td>
+          <td class="se-cell"><span class="se">Orange/red discolouration of urine, tears, sweat</span><span class="se">Hepatotoxicity</span><span class="se">Strong CYP inducer — MANY drug interactions</span><span class="se">GI upset</span></td>
+        </tr>
+        <tr>
+          <td><span class="dn">Trimethoprim</span><span class="dc">DHFR inhibitor (alone)</span></td>
+          <td><span class="brand">Proloprim, Triprim</span><span class="brand-list">Triprim (100 mg, 200 mg tabs) — less common alone in Pakistan</span></td>
+          <td><div class="dm">200 mg PO q12h</div><div class="dd">UTI prophylaxis: 100 mg q24h at night</div></td>
+          <td><span class="duration-pill">UTI: 7 days<br>Prophylaxis: long-term</span></td>
+          <td class="indication-cell"><span class="ind-tag">Uncomplicated UTI</span><span class="ind-tag">Recurrent UTI prophylaxis</span></td>
+          <td class="se-cell"><span class="se">Rash</span><span class="se">Nausea</span><span class="se">Hyperkalemia</span><span class="se">Megaloblastic anaemia (rare)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="quick-box">
+    <h3>🧠 Pakistan Oral Antibiotic — Quick Reference by Infection Type</h3>
+    <div class="qr-grid">
+      <div class="qrc or"><h4>UTI (Uncomplicated, Women)</h4><ul><li>1st: Nitrofurantoin 100 mg q12h × 5 days</li><li>2nd: Fosfomycin 3 g single dose</li><li>3rd: TMP-SMX DS 1 tab q12h × 3 days (if susceptible)</li><li>Avoid FQ unless culture-guided (resistance high)</li></ul></div>
+      <div class="qrc or"><h4>CAP (Community Pneumonia)</h4><ul><li>Mild: Amoxicillin 1 g q8h × 5–7 days</li><li>Atypical suspected: + Azithromycin 500 mg q24h × 3–5 days</li><li>Moderate: Amoxiclav 625 mg q8h + Azithromycin 500 mg q24h</li><li>Duration: 5 days if responding well (2019 ATS/IDSA)</li></ul></div>
+      <div class="qrc or"><h4>Typhoid Fever (Pakistan)</h4><ul><li>1st (susceptible): Ciprofloxacin 500 mg q12h × 7–10 days</li><li>XDR Typhoid: Azithromycin 1 g q24h × 5–7 days (Pakistan strain)</li><li>Cefixime 400 mg q12h × 7–14 days (alternative)</li><li>Parenteral: Ceftriaxone 2 g q12h for severe/XDR</li></ul></div>
+      <div class="qrc warn"><h4>⚠️ Important — Pakistan Resistance</h4><ul><li>XDR Typhoid: resistant to all oral antibiotics except Azithromycin &amp; FQ (some)</li><li>High FQ resistance in E. coli UTI — culture before FQ</li><li>High H. pylori Clarithromycin resistance — use Bismuth quadruple if triple fails</li><li>Always check local antibiogram before empiric oral therapy</li></ul></div>
+    </div>
+  </div>
+</div><!-- end panel-oral -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     MONITORING & RENAL
+═══════════════════════════════════════════════════════ -->
+<div id="panel-monitor" class="panel">
+  <div class="sec-head"><h2 style="color:var(--gold)">Monitoring &amp; Renal Dose Adjustment</h2></div>
+
+  <div class="callout amber"><span>⚠️</span><span><strong>70 kg Reference:</strong> Normal CrCl = 80–120 mL/min · Moderate impairment = 30–60 mL/min · Severe = &lt;30 mL/min · HD = Haemodialysis. All doses based on IBW 70 kg unless stated.</span></div>
+
+  <div class="dtable-wrap">
+    <div class="dtable-hdr lbroad">🔬 Drug Monitoring &amp; Renal Dose Adjustment — All Key Antibiotics</div>
+    <table class="dt">
+      <thead><tr><th>Drug</th><th>Normal CrCl &gt;60<br>(70 kg dose)</th><th>Moderate CrCl 30–60</th><th>Severe / HD &lt;30</th><th>Monitor</th><th>Key Toxicity</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Vancomycin</strong></td><td><span class="d70">1,000–1,250 mg q12h<br>AUC/MIC 400–600</span></td><td>Extend interval; AUC-guided</td><td>q24–96h; level-guided post-HD</td><td>AUC or trough · SCr q48–72h</td><td><span class="fl r">Nephrotoxicity</span> <span class="fl a">Red Man (rate)</span></td></tr>
+        <tr><td><strong>Daptomycin</strong></td><td><span class="d70">420–700 mg q24h</span></td><td>Same dose q24h</td><td>Same dose q48h (post-HD)</td><td>CPK weekly · SCr</td><td><span class="fl r">Myopathy / CPK↑</span></td></tr>
+        <tr><td><strong>Linezolid</strong></td><td><span class="d70">600 mg q12h (fixed)</span></td><td>No change needed</td><td>No change — safest in AKI</td><td>CBC weekly · LFTs</td><td><span class="fl r">Thrombocytopenia</span> <span class="fl r">Serotonin Syndrome</span></td></tr>
+        <tr><td><strong>Pip-Tazo</strong></td><td><span class="d70">4.5 g q8h (EI 4h)</span></td><td>4.5 g q8h (same)</td><td>2.25 g q8h</td><td>SCr · Neuro checks</td><td><span class="fl r">Encephalopathy in renal failure</span></td></tr>
+        <tr><td><strong>Meropenem</strong></td><td><span class="d70">1–2 g q8h (EI 3h)</span></td><td>1 g q12h</td><td>500 mg q24h (post-HD supplement)</td><td>SCr</td><td><span class="fl a">Seizures (rare — lowest carbapenem risk)</span></td></tr>
+        <tr><td><strong>Imipenem</strong></td><td><span class="d70">500 mg–1 g q6h</span></td><td>250–500 mg q6–8h</td><td>250 mg q12h</td><td>SCr · Neuro checks</td><td><span class="fl r">HIGHEST seizure risk (all carbapenems)</span></td></tr>
+        <tr><td><strong>Ertapenem</strong></td><td><span class="d70">1 g q24h</span></td><td>1 g q24h (same)</td><td>500 mg q24h</td><td>SCr</td><td><span class="fl a">No Pseudomonas gap (key clinical risk)</span></td></tr>
+        <tr><td><strong>Cefepime</strong></td><td><span class="d70">2 g q8h (EI 3h)</span></td><td>2 g q12h</td><td>1 g q24h</td><td>SCr · EEG if confused</td><td><span class="fl r">NCSE / Encephalopathy in renal failure</span></td></tr>
+        <tr><td><strong>Caz-Avi</strong></td><td><span class="d70">2.5 g q8h (over 2h)</span></td><td>1.25 g q8h</td><td>0.94 g q24h — CRITICAL</td><td>SCr — strict monitoring</td><td>Underdosing → rapid resistance emergence</td></tr>
+        <tr><td><strong>Gentamicin</strong></td><td><span class="d70">420 mg q24h (EID)</span></td><td>Reduce / extend; level-guided</td><td>Avoid if possible; level-guided</td><td>Peak + Trough · SCr · Hearing</td><td><span class="fl r">Nephrotoxicity + Ototoxicity</span></td></tr>
+        <tr><td><strong>Amikacin</strong></td><td><span class="d70">1,200 mg q24h (EID)</span></td><td>Reduce / extend; level-guided</td><td>Avoid; level-guided if must</td><td>Peak (&gt;60) + Trough (&lt;5) · SCr · Hearing</td><td><span class="fl r">Nephrotoxicity + Ototoxicity</span></td></tr>
+        <tr><td><strong>Colistin (CMS)</strong></td><td><span class="d70">Load 9 MU, then 4.5 MU q12h</span></td><td>Reduce maintenance dose</td><td>Loading only; level-guided</td><td>SCr DAILY · Urine output</td><td><span class="fl r">Nephrotoxicity 30–50%</span> <span class="fl a">Neurotoxicity</span></td></tr>
+        <tr><td><strong>Metronidazole</strong></td><td><span class="d70">500 mg q8h (fixed)</span></td><td>No change</td><td>No change (metabolites accumulate)</td><td>Neuro assessment (prolonged use)</td><td><span class="fl a">Peripheral neuropathy (prolonged)</span></td></tr>
+        <tr><td><strong>Ampicillin</strong></td><td><span class="d70">2 g q4–6h</span></td><td>2 g q6h</td><td>2 g q12h</td><td>SCr</td><td><span class="fl a">EBV rash if mono present</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="quick-box">
+    <h3>⚡ Critical Interactions &amp; Infusion Rules</h3>
+    <div class="qr-grid">
+      <div class="qrc warn"><h4>Dangerous Drug Combinations</h4><ul><li>Linezolid + SSRIs/SNRIs → Serotonin Syndrome</li><li>Vancomycin + Pip-Tazo → ↑↑ Nephrotoxicity</li><li>Aminoglycosides + Loop diuretics → ↑ Ototoxicity</li><li>Nafcillin + Warfarin → ↓ INR (CYP3A4 induction)</li><li>Daptomycin + Statins → ↑ Myopathy (CPK↑)</li><li>Ciprofloxacin + Antacids/Iron → ↓ Absorption (chelation)</li></ul></div>
+      <div class="qrc amber"><h4>Infusion Rate Rules</h4><ul><li>Vancomycin: minimum 1h/gram (prevent Red Man)</li><li>Pip-Tazo EI: infuse over 4 hours</li><li>Meropenem EI: infuse over 3 hours</li><li>Caz-Avi: infuse over 2 hours</li><li>Colistin: infuse over 30–60 min</li><li>Ceftaroline: infuse over 60 min</li></ul></div>
+      <div class="qrc green"><h4>No/Minimal Renal Adjustment</h4><ul><li>Linezolid — 600 mg q12h unchanged</li><li>Metronidazole — 500 mg q8h unchanged</li><li>Ceftriaxone — biliary excretion (safe in renal failure)</li><li>Clindamycin — hepatic metabolism</li><li>Doxycycline — fecal excretion</li><li>Azithromycin — biliary excretion</li></ul></div>
+      <div class="qrc gp"><h4>PK/PD at a Glance</h4><ul><li><strong>Time-dependent (T&gt;MIC):</strong> All β-lactams → Extended infusion</li><li><strong>Concentration-dependent:</strong> Aminoglycosides, FQ → High single dose</li><li><strong>AUC/MIC:</strong> Vancomycin (target 400–600) · FQ</li><li><strong>Post-Antibiotic Effect:</strong> Aminoglycosides, FQ (prolonged) · β-lactams (minimal)</li></ul></div>
+    </div>
+  </div>
+</div><!-- end panel-monitor -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     ABBREVIATIONS
+═══════════════════════════════════════════════════════ -->
+<div id="panel-abbr" class="panel">
+  <div class="sec-head"><h2 style="color:var(--gold)">Abbreviation Glossary</h2></div>
+  <div class="abbr-wrap">
+    <div class="abbr-block"><h4>GP Organisms &amp; Resistance</h4>
+      <div class="abbr-row"><span class="ak">GP</span><span class="av">Gram Positive — retain crystal violet stain (purple)</span></div>
+      <div class="abbr-row"><span class="ak">MRSA</span><span class="av">Methicillin-Resistant Staphylococcus aureus</span></div>
+      <div class="abbr-row"><span class="ak">MSSA</span><span class="av">Methicillin-Sensitive Staphylococcus aureus</span></div>
+      <div class="abbr-row"><span class="ak">VRE</span><span class="av">Vancomycin-Resistant Enterococcus (usually E. faecium)</span></div>
+      <div class="abbr-row"><span class="ak">VSE</span><span class="av">Vancomycin-Sensitive Enterococcus</span></div>
+      <div class="abbr-row"><span class="ak">GAS</span><span class="av">Group A Streptococcus (S. pyogenes)</span></div>
+      <div class="abbr-row"><span class="ak">GBS</span><span class="av">Group B Streptococcus (S. agalactiae)</span></div>
+      <div class="abbr-row"><span class="ak">VGS</span><span class="av">Viridans Group Streptococci</span></div>
+      <div class="abbr-row"><span class="ak">PBP2a</span><span class="av">Penicillin-Binding Protein 2a — MRSA resistance target (mecA gene)</span></div>
+      <div class="abbr-row"><span class="ak">NF</span><span class="av">Necrotizing Fasciitis — life-threatening deep tissue infection</span></div>
+      <div class="abbr-row"><span class="ak">TSS</span><span class="av">Toxic Shock Syndrome (TSST-1 toxin)</span></div>
+      <div class="abbr-row"><span class="ak">IE / SBE</span><span class="av">Infective Endocarditis / Subacute Bacterial Endocarditis</span></div>
+      <div class="abbr-row"><span class="ak">PCN-S/R</span><span class="av">Penicillin Sensitive / Resistant</span></div>
+    </div>
+    <div class="abbr-block"><h4>GN Organisms &amp; Resistance</h4>
+      <div class="abbr-row"><span class="ak">GN</span><span class="av">Gram Negative — outer membrane, thin peptidoglycan, pink stain</span></div>
+      <div class="abbr-row"><span class="ak">ESBL</span><span class="av">Extended-Spectrum Beta-Lactamase — destroys 3rd gen cephalosporins</span></div>
+      <div class="abbr-row"><span class="ak">KPC</span><span class="av">Klebsiella pneumoniae Carbapenemase — class A serine enzyme; inhibited by Avibactam</span></div>
+      <div class="abbr-row"><span class="ak">NDM</span><span class="av">New Delhi Metallo-β-lactamase — MBL; NOT inhibited by Avibactam</span></div>
+      <div class="abbr-row"><span class="ak">MBL</span><span class="av">Metallo-Beta-Lactamase (NDM, VIM, IMP) — zinc-dependent</span></div>
+      <div class="abbr-row"><span class="ak">AmpC</span><span class="av">Chromosomal cephalosporinase in Enterobacter — inducible by 3rd gen cephalosporins</span></div>
+      <div class="abbr-row"><span class="ak">MDR</span><span class="av">Multi-Drug Resistant — resistant to ≥3 antibiotic classes</span></div>
+      <div class="abbr-row"><span class="ak">XDR</span><span class="av">Extensively Drug-Resistant — resistant to all but 1–2 classes</span></div>
+      <div class="abbr-row"><span class="ak">PDR</span><span class="av">Pan-Drug Resistant — resistant to ALL available antibiotics</span></div>
+      <div class="abbr-row"><span class="ak">ESKAPE</span><span class="av">Enterococcus, S. aureus, Klebsiella, Acinetobacter, Pseudomonas, Enterobacter</span></div>
+      <div class="abbr-row"><span class="ak">HAP / VAP</span><span class="av">Hospital-Acquired / Ventilator-Associated Pneumonia</span></div>
+      <div class="abbr-row"><span class="ak">CAP / CABP</span><span class="av">Community-Acquired Pneumonia / Bacterial Pneumonia</span></div>
+      <div class="abbr-row"><span class="ak">HUS</span><span class="av">Hemolytic Uremic Syndrome (Shiga toxin)</span></div>
+    </div>
+    <div class="abbr-block"><h4>Drug Classes &amp; Abbreviations</h4>
+      <div class="abbr-row"><span class="ak">IV / IM / PO</span><span class="av">Intravenous / Intramuscular / Per Os (oral)</span></div>
+      <div class="abbr-row"><span class="ak">β-lactam</span><span class="av">Antibiotic class: Penicillins, Cephalosporins, Carbapenems, Monobactams</span></div>
+      <div class="abbr-row"><span class="ak">Pip-Tazo</span><span class="av">Piperacillin-Tazobactam (Tazocin / Zosyn)</span></div>
+      <div class="abbr-row"><span class="ak">Caz-Avi</span><span class="av">Ceftazidime-Avibactam (Avycaz)</span></div>
+      <div class="abbr-row"><span class="ak">PCN</span><span class="av">Penicillin (class)</span></div>
+      <div class="abbr-row"><span class="ak">FQ</span><span class="av">Fluoroquinolone (Ciprofloxacin, Levofloxacin, Moxifloxacin)</span></div>
+      <div class="abbr-row"><span class="ak">TMP-SMX</span><span class="av">Trimethoprim-Sulfamethoxazole (Co-trimoxazole / Bactrim / Septran)</span></div>
+      <div class="abbr-row"><span class="ak">CMS</span><span class="av">Colistimethate Sodium — prodrug of Colistin; renally cleared (unlike Polymyxin B)</span></div>
+      <div class="abbr-row"><span class="ak">EI</span><span class="av">Extended Infusion — slow β-lactam drip to maximise time above MIC</span></div>
+      <div class="abbr-row"><span class="ak">OPAT</span><span class="av">Outpatient Parenteral Antibiotic Therapy — home IV antibiotics</span></div>
+      <div class="abbr-row"><span class="ak">DS</span><span class="av">Double Strength (TMP-SMX DS = TMP 160 mg + SMX 800 mg)</span></div>
+      <div class="abbr-row"><span class="ak">XDR Typhoid</span><span class="av">Extensively Drug-Resistant S. typhi — resistant to all except Azithromycin (Pakistan outbreak)</span></div>
+    </div>
+    <div class="abbr-block"><h4>PK/PD &amp; Monitoring</h4>
+      <div class="abbr-row"><span class="ak">PK / PD</span><span class="av">Pharmacokinetics / Pharmacodynamics</span></div>
+      <div class="abbr-row"><span class="ak">MIC</span><span class="av">Minimum Inhibitory Concentration — lowest conc. stopping bacterial growth</span></div>
+      <div class="abbr-row"><span class="ak">AUC/MIC</span><span class="av">Total drug exposure / MIC — Vancomycin target 400–600 mg·h/L</span></div>
+      <div class="abbr-row"><span class="ak">T&gt;MIC</span><span class="av">Time above MIC — PK/PD target for β-lactams</span></div>
+      <div class="abbr-row"><span class="ak">Cmax/MIC</span><span class="av">Peak concentration / MIC — target for aminoglycosides (concentration-dependent killing)</span></div>
+      <div class="abbr-row"><span class="ak">PAE</span><span class="av">Post-Antibiotic Effect — bacteria stay suppressed after drug falls below MIC</span></div>
+      <div class="abbr-row"><span class="ak">TDM</span><span class="av">Therapeutic Drug Monitoring — serum level measurement</span></div>
+      <div class="abbr-row"><span class="ak">CrCl</span><span class="av">Creatinine Clearance — renal function measure (mL/min)</span></div>
+      <div class="abbr-row"><span class="ak">SCr</span><span class="av">Serum Creatinine — renal function marker</span></div>
+      <div class="abbr-row"><span class="ak">IBW</span><span class="av">Ideal Body Weight — for aminoglycoside and colistin dosing</span></div>
+      <div class="abbr-row"><span class="ak">CPK</span><span class="av">Creatine Phosphokinase — muscle enzyme; monitor with Daptomycin</span></div>
+      <div class="abbr-row"><span class="ak">NCSE</span><span class="av">Non-Convulsive Status Epilepticus — subtle confusion; check EEG (Cefepime/Imipenem)</span></div>
+      <div class="abbr-row"><span class="ak">ASHP 2020</span><span class="av">Guidelines for Vancomycin AUC-based monitoring (replaced trough-only monitoring)</span></div>
+    </div>
+    <div class="abbr-block"><h4>Dosing Frequency</h4>
+      <div class="abbr-row"><span class="ak">q4h</span><span class="av">Every 4 hours (6 times daily)</span></div>
+      <div class="abbr-row"><span class="ak">q6h</span><span class="av">Every 6 hours (4 times daily)</span></div>
+      <div class="abbr-row"><span class="ak">q8h</span><span class="av">Every 8 hours (3 times daily — TDS)</span></div>
+      <div class="abbr-row"><span class="ak">q12h</span><span class="av">Every 12 hours (twice daily — BD)</span></div>
+      <div class="abbr-row"><span class="ak">q24h / OD</span><span class="av">Every 24 hours (once daily)</span></div>
+      <div class="abbr-row"><span class="ak">MU</span><span class="av">Million Units (Penicillin G, Colistin)</span></div>
+      <div class="abbr-row"><span class="ak">EID</span><span class="av">Extended Interval Dosing — aminoglycosides once daily</span></div>
+      <div class="abbr-row"><span class="ak">Load/Maint</span><span class="av">Loading dose (rapid) / Maintenance dose (ongoing)</span></div>
+      <div class="abbr-row"><span class="ak">HD post-dose</span><span class="av">Give supplemental dose after haemodialysis session</span></div>
+    </div>
+    <div class="abbr-block"><h4>Clinical Terms</h4>
+      <div class="abbr-row"><span class="ak">ICU</span><span class="av">Intensive Care Unit</span></div>
+      <div class="abbr-row"><span class="ak">BSI</span><span class="av">Bloodstream Infection (bacteremia)</span></div>
+      <div class="abbr-row"><span class="ak">UTI / cUTI</span><span class="av">Urinary Tract Infection / Complicated UTI</span></div>
+      <div class="abbr-row"><span class="ak">IAI</span><span class="av">Intra-Abdominal Infection</span></div>
+      <div class="abbr-row"><span class="ak">CLABSI</span><span class="av">Central Line-Associated Bloodstream Infection</span></div>
+      <div class="abbr-row"><span class="ak">CNS / BBB</span><span class="av">Central Nervous System / Blood-Brain Barrier</span></div>
+      <div class="abbr-row"><span class="ak">NVE / PVE</span><span class="av">Native Valve / Prosthetic Valve Endocarditis</span></div>
+      <div class="abbr-row"><span class="ak">CF</span><span class="av">Cystic Fibrosis (chronic Pseudomonas lung)</span></div>
+      <div class="abbr-row"><span class="ak">DILI</span><span class="av">Drug-Induced Liver Injury</span></div>
+      <div class="abbr-row"><span class="ak">BV</span><span class="av">Bacterial Vaginosis</span></div>
+      <div class="abbr-row"><span class="ak">STI</span><span class="av">Sexually Transmitted Infection</span></div>
+      <div class="abbr-row"><span class="ak">AECOPD</span><span class="av">Acute Exacerbation of Chronic Obstructive Pulmonary Disease</span></div>
+      <div class="abbr-row"><span class="ak">MAC</span><span class="av">Mycobacterium avium Complex (HIV-associated)</span></div>
+    </div>
+  </div>
+</div><!-- end panel-abbr -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     AUTHOR
+═══════════════════════════════════════════════════════ -->
+<div id="panel-author" class="panel">
+  <div class="bio-wrap">
+    <div class="bio-hdr">
+      <div class="bio-init">ZA</div>
+      <div>
+        <div class="bio-name">Dr. Muhammad Zain Abbas</div>
+        <div class="bio-sub">
+          <span>Author</span> — Paragon Series of Medical Books &nbsp;·&nbsp;
+          <span>Founder</span> — 360 Muslim Experts &amp; Medico 360<br>
+          Physician · Medical Educator · Author · Public Speaker · Youth Leader
+        </div>
+        <div class="award-row">
+          <span class="ac">🏆 Best Orator — UHS Vice Chancellor</span>
+          <span class="ac">🌟 Best Youth Leader — Health Minister, Pakistan</span>
+          <span class="ac">📚 Paragon Series — Medical Book Author</span>
+          <span class="ac">🌍 Founder — 360 Muslim Experts</span>
+        </div>
+      </div>
+    </div>
+    <div class="bio-body">
+      <div class="bio-sec">
+        <h3>About Dr. Muhammad Zain Abbas</h3>
+        <p>Dr. Muhammad Zain Abbas is a Pakistani physician, medical educator, and author who has dedicated his career to making world-class medical education accessible to every doctor and student — regardless of geography or financial circumstance. He is widely recognised for his ability to simplify complex clinical concepts without losing scientific rigour, a quality honoured at the highest levels of Pakistan's medical establishment.</p>
+      </div>
+      <div class="bio-sec">
+        <h3>📚 Paragon Series of Medical Books</h3>
+        <p>Author of the celebrated <strong>Paragon Series of Medical Books</strong> — comprehensive, high-yield, exam-focused references spanning all major subjects of the undergraduate and postgraduate medical curriculum. Known for clear tables, memorable mnemonics, and strong clinical correlations, widely used across Pakistan.</p>
+      </div>
+      <div class="bio-sec">
+        <h3>🏆 Awards &amp; Recognition</h3>
+        <div class="bio-g2">
+          <div class="bi"><h4>Best Orator — UHS Vice Chancellor</h4><p>Awarded for outstanding medical communication and inspiring large audiences of healthcare professionals and students across Pakistan.</p></div>
+          <div class="bi"><h4>Best Youth Leader — Health Minister</h4><p>Recognised by the Health Minister of Pakistan for visionary leadership among youth and dedication to healthcare education reform.</p></div>
+        </div>
+      </div>
+      <div class="bio-sec">
+        <h3>🎓 Teaching &amp; Licensing Exam Guidance</h3>
+        <p>Dr. Zain delivers lectures covering <strong>all major medical subjects</strong> — Anatomy, Physiology, Pharmacology, Microbiology, Clinical Medicine, Surgery, and more. He also provides dedicated guidance for <strong>USMLE, PLAB, AMC, FCPS, MRCP</strong>, and other parallel licensing examinations, empowering Pakistani doctors to compete globally.</p>
+      </div>
+      <div class="bio-sec">
+        <h3>🌍 360 Muslim Experts</h3>
+        <p>As founder of <strong>360 Muslim Experts</strong>, Dr. Zain leads a global platform connecting Muslim professionals across medicine, science, law, and technology — fostering mentorship, collaboration, and excellence rooted in Islamic values.</p>
+      </div>
+      <div class="bio-sec">
+        <h3>💡 Mission</h3>
+        <p>Through <strong>Medico 360</strong>, the Paragon series, and clinical tools like this complete antibiotic reference, Dr. Zain consistently provides high-quality medical education freely for the betterment of the medical community and ultimately for better patient care.<br><br><em style="color:var(--gold);font-size:16px;">جزاک اللہ خیراً — May Allah reward your support of this mission.</em></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SUPPORT / COFFEE
+═══════════════════════════════════════════════════════ -->
+<div id="panel-coffee" class="panel">
+  <div class="coffee-card">
+    <div class="ct">
+      <span class="em">☕</span>
+      <h2>Buy Me a Coffee</h2>
+      <p>This complete antibiotic reference — every dose, every brand, every clinical pearl — was crafted with hundreds of hours by <strong style="color:#fb923c">Dr. Muhammad Zain Abbas</strong> and shared freely. If it helped you, support the mission.</p>
+      <div class="cprice">Rs. 450 / cup</div>
+      <p style="font-size:11px;color:#6b7280">Every rupee funds more free content · More books · More lives saved</p>
+    </div>
+    <div class="cb">
+      <div class="pr"><span class="pl">Account Number</span>
+        <div style="display:flex;align-items:center;gap:9px;">
+          <span class="pv grn" id="acc-num">0335-6222019</span>
+          <button class="copy-btn" onclick="copyNum(this)">COPY</button>
+        </div>
+      </div>
+      <div class="pr"><span class="pl">Account Name</span><span class="pv">Dr. Muhammad Zain Abbas</span></div>
+      <div class="pr"><span class="pl">Platform</span><span class="pv">EasyPaisa · JazzCash Compatible</span></div>
+      <div class="pr"><span class="pl">Amount</span><span class="pv org">Rs. 450</span></div>
+      <div class="pr"><span class="pl">Purpose</span><span class="pv" style="font-size:12px;color:var(--muted)">Medical Education — Medico 360</span></div>
+      <div class="how">
+        <h4>⚡ How to Send</h4>
+        <div class="step"><div class="sn">1</div>Open <strong>&nbsp;EasyPaisa or JazzCash&nbsp;</strong> app</div>
+        <div class="step"><div class="sn">2</div>Send Money → <strong>&nbsp;03356222019</strong></div>
+        <div class="step"><div class="sn">3</div>Amount: <strong>&nbsp;Rs. 450</strong> (or any amount)</div>
+        <div class="step"><div class="sn">4</div>Reference: <strong>&nbsp;"Medico 360"</strong> — Confirm ✓</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end body-wrap -->
+
+<footer>
+  <span>⚠️ CLINICAL REFERENCE ONLY</span> — Always verify with current guidelines &amp; local antibiogram. Doses individualised per patient. Not a substitute for clinical judgement. | Based on WHO, IDSA, ASHP, Surviving Sepsis 2024 guidelines.
+</footer>
+
+<script>
+function switchTab(panel, cls) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(t => t.classList.remove('a-gp','a-gn','a-broad','a-oral','a-other'));
+  document.getElementById('panel-' + panel).classList.add('active');
+  var tabId = 'tab-' + panel;
+  var el = document.getElementById(tabId);
+  if(el) el.classList.add(cls);
+  document.getElementById('toc-section').style.display = 'none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function gotoTOC() {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(t => t.classList.remove('a-gp','a-gn','a-broad','a-oral','a-other'));
+  document.getElementById('toc-section').style.display = 'block';
+}
+function copyNum(btn) {
+  navigator.clipboard.writeText('03356222019').then(() => {
+    btn.textContent = 'COPIED ✓';
+    setTimeout(() => { btn.textContent = 'COPY'; }, 2000);
+  });
+}
+// Show TOC on load
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('toc-section').style.display = 'block';
+});
+</script>
+</body>
+</html>
